@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Africa</title>
+    <style>
+
+        @keyframes slideIt {
+            0% {
+                background-image: url(1.jpg);
+
+            }
+
+            25% {
+                background-image: url(2.jpg);
+
+            }
+            50% {
+                background-image: url(3.jpg);
+
+            }
+            75% {
+                background-image: url(4.jpg);
+
+            }
+            100% {
+                background-image: url(1.jpg);
+            }
+
+        }
+
+        body{
+
+            min-height: 100vh;
+            background-image: url(1.jpg);
+            background-size: cover;
+            background-position: center center;
+            animation: slideIt 20s infinite;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        section{
+            color: snow;
+            text-shadow: 2px 2px 2px black;
+            text-transform: uppercase;
+            font-family: "Trebuchet MS";
+        }
+        h1{
+            font-size: 60px;
+        }
+        p{
+            font-size: 32px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section>
+        <h1>ATR</h1>
+        <p>The Safari Expert</p>
+    </section>
+
+</body>
+</html>
