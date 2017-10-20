@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Test innlevering</title>
+    <style>
+        @keyframes move{
+
+            0% {
+
+                transform: scale(1);
+            }
+
+            50% {
+
+                transform: scale(1.3);
+            }
+
+            100% {
+
+                transform: scale(1);
+            }
+
+
+
+        }
+
+
+        @keyframes flyttMeg {
+
+            to {
+                margin-left: 300px;
+                border-radius: 50%;
+                background-color: #444059;
+            }
+        }
+
+        @keyframes flyttMeg2 {
+
+            to {
+                margin-right: 300px;
+                border-radius: 50%;
+                background-color: #444059;
+            }
+        }
+
+
+
+        @keyframes moveRight {
+            to {
+                transform: translateX(5000px);
+
+            }
+        }
+
+        @keyframes catWalk{
+            to {
+                background-position: 0 -5000px;
+
+            }
+
+        }
+
+        .box{
+            background-image: url("PistolAnimasjon4040-01.png");
+            height: 500px; /*1/12 av høyden til  bildet*/
+            width: 500px;
+            animation: catWalk 1s steps(10) infinite;
+            position:absolute;
+            bottom: 25px;
+            right: 700px;
+        }
+
+        .Bullet{
+            background-image: url("bullet-01-01.png");
+            height: 78px;
+            width: 95px;
+            animation: moveRight 1s infinite;
+            position: absolute;
+            bottom: 375px;
+            right: 600px;
+            animation-delay: -0.2s;
+
+        }
+
+        body{
+            background-image: url("Bakgrunn.jpg");
+
+
+        }
+
+        h1{
+            font-family: Futura, Helvetica, Arial;
+            position: absolute;
+            top: 100px;
+            right: 350px;
+            font-size: 50px;
+            color: snow;
+            text-shadow: 2px 2px 2px black;
+            animation: move 2.12s infinite;
+        }
+
+        #firkant {
+            width: 50px;
+            height: 50px;
+            background-color: chartreuse;
+            animation: flyttMeg 1s infinite alternate;
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+
+        }
+
+        #firkant2 {
+            width: 50px;
+            height: 50px;
+            background-color: chartreuse;
+            animation: flyttMeg2 1s infinite alternate;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+
+        }
+        #firkant3 {
+            width: 50px;
+            height: 50px;
+            background-color: chartreuse;
+            animation: flyttMeg 1s infinite alternate;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+
+        }
+        #firkant4 {
+            width: 50px;
+            height: 50px;
+            background-color: chartreuse;
+            animation: flyttMeg2 1s infinite alternate;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <h1>Skuddet i Sarajevo</h1>
+
+    <div class = "Bullet"></div>
+
+    <div class ="box"></div>
+
+    <div id="firkant"></div>
+    <div id="firkant2"></div>
+    <div id="firkant3"></div>
+    <div id="firkant4"></div>
+
+
+
+
+
+
+
+</body>
+</html>
