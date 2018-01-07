@@ -3,9 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>sørAmerika</title>
+    <title>Sør-Amerika</title>
 </head>
 <body>
+<style>
+
+    * {
+        margin: 0;
+    }
+
+    #cb {
+        display: none;
+    }
+
+    #burger {
+        display: flex;
+        width: 16px;
+        height: 16px;
+        flex-direction: column;
+        justify-content: space-between;
+        cursor: pointer;
+        position: absolute;
+        left: 12px;
+        top: 12px;
+    }
+
+    #burger > div {
+        background-color: white;
+        height: 2px;
+        transition: 0.5s;
+
+    }
+    #menu {
+        width: 140px;
+        background-color: forestgreen;
+        position: absolute;
+        top: 64px;
+        left: -300px;
+        min-height: calc(100vh - 64px);
+        transition: 0.8s;
+
+    }
+    #cb:checked ~ #menu {
+        left: 0;
+    }
+    #cb:checked ~ #burger > div:first-child {
+        transform: translateY(7px) rotate(45deg);
+    }
+    #cb:checked ~ #burger > div:nth-child(2) {
+        opacity: 0;
+    }
+    #cb:checked ~ #burger > div:last-child {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    nav a{
+        display: inline-block;
+        color: #a4a3ad;
+        font-family: Futura, Helvetica, Arial;
+        padding: 22px 16px 22px 16px;
+        font-size: 26px;
+        text-decoration: none;
+
+
+    }
+
+    nav a:hover{
+        color: white;
+
+    }
+
+    .active {
+        color: white;
+        border-bottom: 4px solid white;
+        width: 110px;
+    }
+
+
+    body {
+        background-color: white;
+        background-size: cover;
+        font-family: Futura, Helvetica, Arial
+    }
+    #h1-1 {
+        border-radius: 25px;
+        margin-bottom: 16px;
+        padding-top: 16px;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    #h1-2  {
+        border-radius: 25px;
+        margin-bottom: 16px;
+        padding-top: 16px;
+        text-align: center;
+    }
+
+    main {
+        overflow: hidden;
+        background-color: beige;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 100vh;
+        position: relative;
+        border: 3px solid black;
+    }
+    .slides {
+        width: 1000%;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        transition: 1s;
+    }
+    .slides > div {
+        text-align: center;
+    }
+    .slides > div > img {
+        width: 80%;
+        border: 10px solid black;
+        border-style: inset;
+    }
+
+    .informasjon {
+        border-radius: 25px;
+        background-color: #eee;
+        width: 50%;
+        margin: 25px auto;
+        text-align: center;
+        padding: 16px;
+        margin-top: 40px;
+    }
+
+    .informasjon > a {
+        margin-bottom: 100px;
+
+    }
+
+    #boks {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: forestgreen;
+        height: 64px;
+        width: 50%;
+    }
+
+</style>
+</head>
+<body>
+
+<div id="boks"></div>
+<input type="checkbox" id="cb">
+<label id="burger" for="cb">
+    <div></div>
+    <div></div>
+    <div></div>
+</label>
+
+<nav id="menu">
+
+    <a href="kartet.html">
+        Kartet
+    </a>
+
+    <a href="afrika.html" >
+        Afrika
+    </a>
+
+    <a href="alaska.html">
+        Alaska
+    </a>
+
+    <a href="asia.html">
+        Asia
+    </a>
+
+    <a href="australia.html" >
+        Australia
+    </a>
+
+    <a href="canada.html">
+        Cannada
+    </a>
+
+    <a href="europa.html">
+        Europa
+    </a>
+
+    <a href="grønland.html">
+        Grønland
+    </a>
+
+    <a href="nordAmerika.html">
+        Nord Amerika
+    </a>
+
+    <a href="norge.html">
+        Norge
+    </a>
+
+    <a href="russland.html">
+        Russland
+    </a>
+
+    <a href="sørAmerika.html"   class="active">
+        Sør Amerika
+    </a>
+
+
+
+</nav>
+<main>
+
+
+    <h1 id="h1-1">South-America</h1>
+
+    <div class="slides">
+        <div>
+            <img src="SørAmerika/bird.jpg">
+        </div>
+        <div>
+            <img src="SørAmerika/elv.jpg">
+        </div>
+        <div>
+            <img src="SørAmerika/foss.jpg">
+        </div>
+        <div>
+            <img src="SørAmerika/rødt.jpg">
+        </div>
+        <div>
+            <img src="SørAmerika/trær.jpg">
+        </div>
+    </div>
+
+    <div class="informasjon">
+        <h1 id="h1-2">Facts</h1>
+        <a>
+            South America is a continent located in the western hemisphere,
+            mostly in the southern hemisphere, with a relatively small portion in the northern hemisphere.
+            It may also be considered a subcontinent of the Americas,
+            which is how it is viewed in the Spanish and Portuguese-speaking regions of the Americas.
+            The reference to South America instead of other regions has increased in the last decades due to changing geopolitical dynamics
+        </a>
+    </div>
+
+
+
+</main>
+
+
+
+
+</body>
+</html>
+
+<script>
+    let slides = document.querySelector(".slides");
+    let marg = 0;
+    function forover() {
+        if(marg > -400) {
+            marg = marg - 100;
+            slides.style.marginLeft =  marg + "%";
+        } else {
+            {
+                marg = marg + 400;
+                slides.style.marginLeft = marg + "%";
+            };
+        }
+    }
+    function bakover() {
+        if(marg < 0) {
+            marg = marg + 100;
+            slides.style.marginLeft = marg + "%";
+        } else {
+            {
+                marg = marg - 400;
+                slides.style.marginLeft = marg + "%";
+            };
+        }
+    }
+    slides.onclick = function(klikk) {
+        if(klikk.clientX > innerWidth / 2) {
+            forover();
+        } else {
+            bakover();
+        }
+    }
+</script>
 
 </body>
 </html>
