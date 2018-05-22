@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-float.min.css">
+
+</head>
+<body>
+<style>
+
+
+
+    * {
+        margin: 0;
+    }
+
+    nav1 a{
+        display: inline-block;
+        color: #a4a3ad;
+        font-family: Futura, Helvetica, Arial;
+        padding: 22px 16px 22px 16px;
+        font-size: 26px;
+        text-decoration: none;
+
+
+    }
+
+    nav2 a{
+        display: inline-block;
+        color: black;
+        font-family: Futura, Helvetica, Arial;
+        padding: 22px 16px 22px 16px;
+        font-size: 26px;
+        text-decoration: none;
+    }
+
+    nav1 a:hover{
+        color: black;
+
+    }
+
+
+
+    body {
+        background-color: white;
+        background-size: cover;
+        font-family: Futura, Helvetica, Arial
+    }
+    #h1-1 {
+        border-radius: 25px;
+        margin-bottom: 16px;
+        padding-top: 16px;
+        text-align: center;
+        font-size: 40px;
+    }
+
+    main {
+        overflow: hidden;
+        background-color: beige;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 100vh;
+        position: relative;
+        border: 3px solid black;
+    }
+
+    .post > div {
+        text-align: center;
+    }
+    .post > div > img {
+        max-width: 40%;
+        border: 10px solid black;
+        border-style: inset;
+    }
+
+
+    kommentar > body {
+        background-color: #eee;
+    }
+    kommentar > main {
+        background-color: white;
+        max-width: 700px;
+        margin: auto;
+        padding: 10px;
+
+    }
+
+
+    #h1-3 {
+        text-align: center;
+        color: salmon;
+    }
+    #kommentarer > article {
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+    #kommentarer > article:hover .lblDelete {
+        opacity: 1;
+    }
+    #kommentarer > article > label {
+        /* Ganger grunnstørrelsen som er 16px med 1.5 */
+        font-size: 1.5rem;
+    }
+
+    input {
+
+        text-align: center;
+
+    }
+
+    nav2 > h1 {
+        margin-left: 10px;
+    }
+
+    nav1 > h1 {
+
+        margin-left: 10px;
+    }
+
+
+    nav1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: forestgreen;
+        height: 64px;
+        width: 50%;
+        border: 3px solid black;
+    }
+
+    nav2 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: forestgreen;
+        height: 64px;
+        width: 19%;
+        border: 3px solid black;
+    }
+
+    nav2 > div > img {
+        max-width: 100%;
+        padding-top: 0;
+
+        height: 160px;
+    }
+
+    h3 {
+        font-size: 20px;
+        background-color: #444059;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    nav2 > div {
+        background-color: beige;
+    }
+
+
+    .piler > img {
+        max-width: 10%;
+        position: absolute;
+        left: 75%;
+    }
+
+    .piler > h1 {
+        position: absolute;
+        color: black;
+        left: 76.5%;
+        top: 36%;
+
+    }
+
+    #mittBilde {
+        size: 20px;
+        width: 400px;
+    }
+
+    #inpTekst {
+        max-width: 400px;
+        position: absolute;
+        left: 25%;
+    }
+
+    #Hjemknapp {
+        max-width: 10%;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+
+</style>
+</head>
+<body>
+
+
+<nav1 id="rank">
+    <h1>RANK</h1>
+    <div>
+        <a>Bruker001</a>
+        <n>700</n>
+    </div>
+    <div>
+        <a>Bruker002</a>
+        <n>689</n>
+    </div>
+    <div>
+        <a>Bruker003</a>
+        <n>621</n>
+    </div>
+    <div>
+        <a>Bruker004</a>
+        <n>531</n>
+    </div>
+    <div>
+        <a>Bruker005</a>
+        <n>298</n>
+    </div>
+</nav1>
+
+<nav2 id="TopPosts">
+    <h1>TOP 3</h1>
+    <div>
+        <h3>Bruker009</h3>
+        <img src="Trump18.jpg">
+        <a>1200</a>
+    </div>
+    <div>
+        <h3>Bruker005</h3>
+        <img src="Trump18.jpg">
+        <a>400</a>
+    </div>
+    <div>
+        <h3>Bruker002</h3>
+        <img src="Trump18.jpg">
+        <a>200</a>
+    </div>
+</nav2>
+
+<main>
+
+
+    <a href="index.html">
+        <img src="home.png" id="Hjemknapp">
+    </a>
+
+    <header>
+        <label for=inpBilde>Last opp bilde</label>
+        <input type="file" id="inpBilde">
+    </header>
+
+    <overskrift>
+
+        <h2 id="h1-3">Velg overskrift</h2>
+        <input type="text" id="inpTekst" autocomplete="off" autofocus placeholder="Skriv overskrift her">
+        <section id="overskrifter">
+
+        </section>
+
+        <div>
+        <img src="inpBilde" id="mittBilde">
+    </div>
+
+
+
+
+
+
+</main>
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDJ_qMQcSmkeuBbVIWsdwyEAwVCPxyEFBE",
+        authDomain: "memestream-335bb.firebaseapp.com",
+        databaseURL: "https://memestream-335bb.firebaseio.com",
+        projectId: "memestream-335bb",
+        storageBucket: "memestream-335bb.appspot.com",
+        messagingSenderId: "462636660130"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script>
+
+    const storage = firebase.storage();
+    const db = firebase.database();
+    const urler = db.ref("urler");
+
+    const inpBilde = document.getElementById("inpBilde");
+    const mittBilde = document.getElementById("mittBilde");
+    const main = document.querySelector("main");
+
+    function lagreURL(bildeinfo){
+        urler.push(bildeinfo.downloadURL);
+    }
+
+    function lastOppBilde() {
+
+        const bilde = inpBilde.files[0];
+        const lagringsplass = storage.ref("minebilder/" + bilde.name);
+
+        lagringsplass.put(bilde)
+            .then(lagreURL);
+
+
+    }
+
+    function visBilde(snap){
+        const url = snap.val();
+        main.innerHTML =  `<div style="background-image: url('${url}')"´></div>` + main.innerHTML;
+    }
+
+    inpBilde.onchange = lastOppBilde;
+    urler.on("child_added", visBilde);
+
+</script>
+
+
+<script>
+    // Referanser til HTML-elementer
+    const inpTekst = document.getElementById("inpTekst");
+    const overskrifter = document.getElementById("overskrifter");
+    const db = firebase.database();
+    const overskrif = db.ref("overskrif");
+    function lagreOverskrif() {
+        overskrif.push({
+            tekst: inpTekst.value,
+            done: false
+        });
+        inpTekst.value = ""; // Nuller ut input-feltet
+    }
+    function visoverskri(snap) {
+        const pk = snap.key;
+        const kommenta = snap.val();
+        overskrifter.innerHTML += `
+                <article id="${pk}">
+                    <label class="lblkommenta">${overskri.tekst}</label>
+                    <label onclick="fjern('${pk}')" class="lblDelete">X</label>
+                </article>
+            `;
+    }
+    function fjern(pk) {
+        // Fjerner kommenta fra databasen
+        const overskri = overskrif.child(pk);
+        overskrif.remove();
+    }
+    function fjernHTML(fjernet) {
+        const pk = fjernet.key;
+        const htmlElement = document.getElementById(pk);
+        overskrifter.removeChild(htmlElement);
+    }
+    inpTekst.onchange = lagreOverskri;
+    komment.on("child_added", visoverskrif);
+    komment.on("child_removed", fjernHTML);
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+</body>
+</html>

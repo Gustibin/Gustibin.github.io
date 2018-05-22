@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Index</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-float.min.css">
+
+</head>
+<body>
+<style>
+
+
+
+    * {
+        margin: 0;
+    }
+
+    nav1 a{
+        display: inline-block;
+        color: #a4a3ad;
+        font-family: Futura, Helvetica, Arial;
+        padding: 22px 16px 22px 16px;
+        font-size: 26px;
+        text-decoration: none;
+
+
+    }
+
+    nav2 a{
+        display: inline-block;
+        color: black;
+        font-family: Futura, Helvetica, Arial;
+        padding: 22px 16px 22px 16px;
+        font-size: 26px;
+        text-decoration: none;
+    }
+
+    nav1 a{
+        color: black;
+
+    }
+
+
+
+    body {
+        background-color: white;
+        background-size: cover;
+        font-family: Futura, Helvetica, Arial
+    }
+
+    main {
+        overflow: hidden;
+        background-color: beige;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 100vh;
+        position: relative;
+        border: 3px solid black;
+        border-top: 0px;
+    }
+
+    .post > div {
+        text-align: center;
+    }
+    .post > div > img {
+        max-width: 40%;
+        border: 10px solid black;
+        border-style: inset;
+    }
+
+
+    kommentar > body {
+        background-color: #eee;
+    }
+    kommentar > main {
+        background-color: white;
+        max-width: 700px;
+        margin: auto;
+        padding: 10px;
+
+    }
+
+
+    #h1-3 {
+        text-align: center;
+        color: salmon;
+    }
+    #kommentarer > article {
+        display: grid;
+        grid-template-columns: 1fr auto;
+    }
+
+
+    #kommentarer > article > label {
+        /* Ganger grunnstørrelsen som er 16px med 1.5 */
+        font-size: 1.5rem;
+    }
+
+    input {
+
+        text-align: center;
+
+    }
+
+    nav2 > h1 {
+        margin-left: 10px;
+    }
+
+     nav1 > h1 {
+
+         margin-left: 10px;
+     }
+
+
+    nav1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: forestgreen;
+    height: 64px;
+    width: 50%;
+    border: 3px solid black;
+    }
+
+    nav2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: forestgreen;
+    height: 64px;
+    width: 19%;
+    border: 3px solid black;
+    }
+
+    nav2 > div > img {
+        max-width: 100%;
+        padding-top: 0;
+        
+        height: 160px;
+    }
+
+    h3 {
+        font-size: 20px;
+        background-color: #444059;
+        padding-top: 20px;
+        padding-bottom: 0px;
+    }
+
+    nav2 > div {
+        background-color: beige;
+    }
+
+
+    .piler > img {
+        max-width: 10%;
+        position: absolute;
+        left: 75%;
+    }
+
+    .piler > h1 {
+        position: absolute;
+        color: black;
+        left: 76.5%;
+        top: 290px;
+        
+
+    }
+
+   #topBar {
+       background-color: black;
+       height: 60px;
+
+    }
+
+    #submit-button {
+        position: absolute;
+        left: 240px;
+        top: 10px;
+        max-width: 150px;
+
+    }
+
+
+    div > a > img:hover {
+        border: 3px solid black;
+    }
+
+    #allposts {
+        text-align: center;
+    }
+
+    label {
+        font-size: 40px;
+    }
+
+    img {
+        border: 3px solid black;
+    }
+
+
+
+</style>
+</head>
+<body>
+
+    <div id="topBar">
+
+        <a href="test2.html">
+            <img src="Submit-Button-PNG-Clipart.png" id="submit-button">
+        </a>
+
+    </div>
+
+<main>
+
+
+
+
+
+    <div class="post" id="allposts">
+
+    </div>
+
+    <kommentar>
+
+        <h2 id="h1-3">Kommentarer</h2>
+        <input type="text" id="inpTekst" autocomplete="off" autofocus placeholder="Skriv kommentar her">
+        <section id="kommentarer">
+
+        </section>
+</main>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDJ_qMQcSmkeuBbVIWsdwyEAwVCPxyEFBE",
+        authDomain: "memestream-335bb.firebaseapp.com",
+        databaseURL: "https://memestream-335bb.firebaseio.com",
+        projectId: "memestream-335bb",
+        storageBucket: "memestream-335bb.appspot.com",
+        messagingSenderId: "462636660130"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script>
+    // Referanser til HTML-elementer
+    const allposts = document.getElementById("allposts");
+
+    const inpTekst = document.getElementById("inpTekst");
+    const kommentarer = document.getElementById("kommentarer");
+    const db = firebase.database();
+    const komment = db.ref("bildedata");
+    function lagreKomment() {
+        komment.push({
+            tekst: inpTekst.value,
+            done: false
+        });
+        inpTekst.value = ""; // Nuller ut input-feltet
+    }
+    function viskommenta(snap) {
+        const pk = snap.key;
+        const kommenta = snap.val();
+        allposts.innerHTML += `
+                <article id="${pk}">
+                    <label class="lblkommenta">${kommenta.tekst}</label>
+                    <img src="${kommenta.url}">
+                </article>
+            `;
+    }
+
+    inpTekst.onchange = lagreKomment;
+
+    let antall = 0;
+    function tellOpp(snap) {
+        antall++;
+        console.log(antall);
+    }
+
+    komment.on("child_added", tellOpp);
+
+    komment
+        .orderByChild("time")
+        .limitToLast(1)
+        .on("child_added", viskommenta);
+    komment.on("child_removed", fjernHTML);
+</script>
+
+
+</kommentarer>
+
+
+
+
+
+</body>
+</html>
+
+
+</body>
+</html>
