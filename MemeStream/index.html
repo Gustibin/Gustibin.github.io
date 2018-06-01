@@ -174,11 +174,11 @@
 
     }
 
-    #submit-button {
+    #overskrift {
         position: absolute;
-        left: 240px;
-        top: 10px;
-        max-width: 150px;
+        left: 40%;
+        font-family: Impact, Futura, Helvetica, Arial;
+        font-size: 220%;
 
     }
 
@@ -199,6 +199,24 @@
         border: 3px solid black;
     }
 
+    #review{
+        position: absolute;
+        right: 4%;
+        top: 20%;
+        font-family: Helvetica;
+
+    }
+
+    #terningskast{
+        max-width: 10%;
+        position: absolute;
+        right: 6%;
+        top: 30%;
+    }
+
+    #ukens{
+        text-align: center;
+    }
 
 
 </style>
@@ -207,28 +225,31 @@
 
     <div id="topBar">
 
-        <a href="test2.html">
-            <img src="Submit-Button-PNG-Clipart.png" id="submit-button">
+        <a id="overskrift">
+          Meme of the week
         </a>
-
     </div>
 
 <main>
-
-
-
-
-
-    <div class="post" id="allposts">
-
+    <div id="review">
+        Godt meme. <br /> Sterk sekser.
     </div>
 
-    <kommentar>
+    <a>
+
+        <img src="Terningkast6.png" id="terningskast">
+    </a>
+
+
+
+        <section id="ukens"></section>
 
         <h2 id="h1-3">Kommentarer</h2>
         <input type="text" id="inpTekst" autocomplete="off" autofocus placeholder="Skriv kommentar her">
         <section id="kommentarer">
+            <div class="post" id="allposts">
 
+            </div>
         </section>
 </main>
 
@@ -249,46 +270,71 @@
 </script>
 
 <script>
+
+    const db = firebase.database();
+
     // Referanser til HTML-elementer
     const allposts = document.getElementById("allposts");
+    const ukens = document.getElementById("ukens");
+
+    const kommentarerDB = db.ref("kommentarer");
 
     const inpTekst = document.getElementById("inpTekst");
     const kommentarer = document.getElementById("kommentarer");
-    const db = firebase.database();
-    const komment = db.ref("bildedata");
+
+    const bildedata = db.ref("bildedata");
     function lagreKomment() {
-        komment.push({
+        if(inpTekst.value === "") return;
+        kommentarerDB.push({
             tekst: inpTekst.value,
             done: false
         });
         inpTekst.value = ""; // Nuller ut input-feltet
     }
-    function viskommenta(snap) {
+    function visUkens(snap) {
+        console.log("TEST");
         const pk = snap.key;
-        const kommenta = snap.val();
-        allposts.innerHTML += `
+        const innlegg = snap.val();
+        ukens.innerHTML = `
                 <article id="${pk}">
-                    <label class="lblkommenta">${kommenta.tekst}</label>
-                    <img src="${kommenta.url}">
+                    <label class="lblkommenta">${innlegg.tekst}</label>
+                    <img src="${innlegg.url}">
                 </article>
             `;
     }
 
+    function visKommentar(snap) {
+
+        const pk = snap.key;
+        const komment = snap.val();
+        kommentarer.innerHTML = `
+                <article id="${pk}">
+                    <label class="lblkommenta">${komment.tekst}</label>
+                </article>
+            ` + kommentarer.innerHTML;
+    }
+
+
+
     inpTekst.onchange = lagreKomment;
 
     let antall = 0;
+
     function tellOpp(snap) {
         antall++;
         console.log(antall);
     }
 
-    komment.on("child_added", tellOpp);
+    //komment.on("child_added", tellOpp);
 
-    komment
+    kommentarerDB.on("child_added", visKommentar);
+
+    bildedata
         .orderByChild("time")
         .limitToLast(1)
-        .on("child_added", viskommenta);
-    komment.on("child_removed", fjernHTML);
+        .on("child_added", visUkens);
+
+    // komment.on("child_removed", fjernHTML);
 </script>
 
 

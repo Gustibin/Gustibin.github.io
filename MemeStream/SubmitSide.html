@@ -175,28 +175,18 @@
 
     }
 
-    #mittBilde {
-        size: 20px;
-        width: 400px;
-    }
-
-    #inpTekst {
-        max-width: 400px;
-        position: absolute;
-        left: 25%;
-    }
 
     #Hjemknapp {
         max-width: 10%;
         position: absolute;
         right: 20px;
-        top: 20px;
+        top: 50px;
     }
 
 
 </style>
 </head>
-<body>
+<main>
 
 
 <nav1 id="rank">
@@ -249,33 +239,12 @@
         <img src="home.png" id="Hjemknapp">
     </a>
 
-    <header>
-        <label for=inpBilde>Last opp bilde</label>
-        <input type="file" id="inpBilde">
-    </header>
-
-    <overskrift>
-
-        <h2 id="h1-3">Velg overskrift</h2>
-        <input type="text" id="inpTekst" autocomplete="off" autofocus placeholder="Skriv overskrift her">
-        <section id="overskrifter">
-
-        </section>
-
-        <div>
-        <img src="inpBilde" id="mittBilde">
-    </div>
-
-
-
-
-
-
-</main>
-
-
-
-
+<form id="skjema">
+    <input type="file" id="inpFil" class="button" required>
+    <input type="tekst" id="inpBildetekst" required placeholder="Overskrift til bildet">
+    <button class="button" type="submit">OK</button>
+</form>
+<section id="alleBildene"></section>
 <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
 <script>
     // Initialize Firebase
@@ -289,84 +258,60 @@
     };
     firebase.initializeApp(config);
 </script>
-
 <script>
+    //Setter opp Firebase med datbase og storage
+    let database = firebase.database(); //Lagring av data om bilder
+    let storage = firebase.storage(); //Lagring av bilder
+    let bildedata = database.ref("bildedata"); //Hvor vi lagrer data om bildene
+    let skjema = document.getElementById("skjema");
+    let inpBildetekst = document.getElementById("inpBildetekst");
+    let inpFile = document.getElementById("inpFile");
+    let alleBildene = document.getElementById("alleBildene");
 
-    const storage = firebase.storage();
-    const db = firebase.database();
-    const urler = db.ref("urler");
+    function lagreData(snapshot) {
+        let bildeURL = snapshot.downloadURL; // URL hvor vi finner bildet
+        let bildetekst = inpBildetekst.value; // Beskrivelse av bildet
+        let bildeinfo = {
+            "url": bildeURL,
+            "tekst": bildetekst,
+            "user" : "DEN SOM ER LOGGET INN",
+            "time" : firebase.database.ServerValue.TIMESTAMP
+        };
+        bildedata.push(bildeinfo);
 
-    const inpBilde = document.getElementById("inpBilde");
-    const mittBilde = document.getElementById("mittBilde");
-    const main = document.querySelector("main");
+        alleBildene.innerHTML = "Gratulerer! Du har nå lastet opp et nytt bilde";
+        skjema.reset();
 
-    function lagreURL(bildeinfo){
-        urler.push(bildeinfo.downloadURL);
+        setTimeout(function() {
+            alleBildene.innerHTML = "";
+        }, 3000);
+
     }
 
-    function lastOppBilde() {
+    function lastOppBilde(evt) {
+        evt.preventDefault();
 
-        const bilde = inpBilde.files[0];
-        const lagringsplass = storage.ref("minebilder/" + bilde.name);
-
-        lagringsplass.put(bilde)
-            .then(lagreURL);
-
-
+        let fil = inpFil.files[0]; //filen som er valgt
+        let lagringsplass = storage.ref("bilder/"+new Date()); //Får et unikt filnavn
+        lagringsplass.put(fil).then(lagreData); //Passer på å ikke lagre data før bildet er lagret
     }
-
-    function visBilde(snap){
-        const url = snap.val();
-        main.innerHTML =  `<div style="background-image: url('${url}')"´></div>` + main.innerHTML;
+    function visAlleBildene(snapshot){
+        let bildedata = snapshot.val();
+        alleBildene.innerHTML = `<article>
+            <img src="${bildedata.url}">
+            <p>${bildedata.tekst}</p>
+        </article>
+    <hr>` + alleBildene.innerHTML;
     }
+    // Legger til kode som sørger for å starte funksjonen når brukeren velger bilde
+    skjema.addEventListener("submit",lastOppBilde);
+   //bildedata.on("child_added", visAlleBildene); // Viser bildene som legges til
+    visAlleBildene
+        .orderByChild("time")
+        .limitToLast(1)
+    </script>
 
-    inpBilde.onchange = lastOppBilde;
-    urler.on("child_added", visBilde);
-
-</script>
-
-
-<script>
-    // Referanser til HTML-elementer
-    const inpTekst = document.getElementById("inpTekst");
-    const overskrifter = document.getElementById("overskrifter");
-    const db = firebase.database();
-    const overskrif = db.ref("overskrif");
-    function lagreOverskrif() {
-        overskrif.push({
-            tekst: inpTekst.value,
-            done: false
-        });
-        inpTekst.value = ""; // Nuller ut input-feltet
-    }
-    function visoverskri(snap) {
-        const pk = snap.key;
-        const kommenta = snap.val();
-        overskrifter.innerHTML += `
-                <article id="${pk}">
-                    <label class="lblkommenta">${overskri.tekst}</label>
-                    <label onclick="fjern('${pk}')" class="lblDelete">X</label>
-                </article>
-            `;
-    }
-    function fjern(pk) {
-        // Fjerner kommenta fra databasen
-        const overskri = overskrif.child(pk);
-        overskrif.remove();
-    }
-    function fjernHTML(fjernet) {
-        const pk = fjernet.key;
-        const htmlElement = document.getElementById(pk);
-        overskrifter.removeChild(htmlElement);
-    }
-    inpTekst.onchange = lagreOverskri;
-    komment.on("child_added", visoverskrif);
-    komment.on("child_removed", fjernHTML);
-</script>
-
-
-
-
+    </main>
 
 
 
