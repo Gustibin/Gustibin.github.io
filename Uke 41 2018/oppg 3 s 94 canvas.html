@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>canvas greie</title>
+
+    <style>
+        canvas{
+            border: solid;
+        }
+    </style>
+
+</head>
+<body>
+
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+
+        var side = 200;
+        var xPosition = 10;
+        var yPosition = 10;
+
+        for(var i = 0; i < 10; i++){
+            ctx.rect(xPosition, yPosition, side, side);
+            ctx.stroke();
+            yPosition = yPosition + 10;
+            xPosition = xPosition + 10;
+            side = side - 20;
+        }
+
+
+    </script>
+
+</body>
+</html>

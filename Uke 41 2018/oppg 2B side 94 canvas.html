@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>firkant canvas</title>
+
+    <style>
+        canvas{
+            border: solid;
+        }
+    </style>
+
+</head>
+<body>
+
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+
+        var xPosition = 0;
+        var yPoistion = 0;
+
+        for(var i = 0; i < 10; i++){
+
+            ctx.fillRect(10, yPoistion, 500, 4 );
+            yPoistion = yPoistion + 50;
+        }
+
+
+    </script>
+
+
+
+
+</body>
+</html>

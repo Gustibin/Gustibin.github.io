@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sangtekster</title>
+</head>
+<body>
+
+
+<script>
+
+    /* Nummer 1
+    for(var i = 0; i <= 146; i++){
+        console.log("Around the world, around the world " + i)
+    }
+    */
+
+
+    /* Nummer 2
+    for(var i = 0; i < 74; i++){
+        console.log("spend three racks on new chains" + i);
+        for(var j = 0; j < 9; j++){
+            console.log("gucci gang" + j);
+        }
+    }
+    */
+
+    var vers1 = "<p>A well a everybody's heard about the bird <br> B-b-b bird, bird, bird, b-bird's the word</p>";
+    var vers2 = "<p>Surfin' bird  <br> B-b-b aah, aah!</p>";
+    var vers3 = "<p>A well a don't you know about the bird? <br> Well, everybody knows that the bird is the word!</p>";
+    var refreng1 = "A well a bird, bird, bird, the bird is the word<br>";
+    var refreng2 = "A well a bird, bird, bird, well the bird is the word<br>";
+
+
+
+    for(var i = 0; i < 3; i++){
+        if(i === 0){
+            console.log(vers1);
+        }
+        else if(i === 1){
+            console.log(vers3);
+        }
+        else{
+            console.log(vers2);
+            break;
+        }
+        for(var j = 0; j < 7; j++){
+            if(j % 2 == 0){
+                console.log(refreng1);
+            }
+            else{
+                console.log(refreng2);
+            }
+        }
+
+    }
+
+
+</script>
+
+
+</body>
+</html>

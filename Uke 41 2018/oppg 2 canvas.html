@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oppg 2</title>
+
+    <style>
+        canvas{
+            border: solid;
+        }
+    </style>
+
+</head>
+<body>
+
+<canvas id="canvas" width="600px" height="600px">
+    Beklager nettleseren din støtter ikke canvas-elementer.
+</canvas>
+
+
+<script>
+
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+
+    var tall = 0;
+    var yPosition = 10;
+
+    while(tall != 100){
+        ctx.fillRect(10, yPosition, 300, 3);
+        yPosition = yPosition + 20;
+        tall ++;
+    }
+
+
+
+</script>
+
+</body>
+</html>
