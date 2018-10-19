@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oddetallfinner</title>
+</head>
+<body>
+
+<input id="inp" type=number placeholder="Skriv et tall">
+<br>
+<button id="btnRegnUt">Regn ut</button>
+
+<script>
+
+    var inp = document.getElementById("inp");
+    var btnRegnUt = document.getElementById("btnRegnUt");
+
+
+
+
+
+    btnRegnUt.onclick = function erOddetall(n){
+        n = Number(inp.value);
+        if(n %2!=0){
+            console.log("true")
+        }
+        else{
+            console.log("false")
+        }
+    }
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>annengradsfunksjon</title>
+</head>
+<body>
+
+<input id="inp1" type=number placeholder="a">
+<input id="inp2" type=number placeholder="b">
+<input id="inp3" type=number placeholder="c">
+<br>
+<button id="btn">Regn ut</button>
+
+
+
+<script>
+
+
+    var inp1 = document.getElementById("inp1");
+    var inp2 = document.getElementById("inp2");
+    var inp3 = document.getElementById("inp3");
+    var btn = document.getElementById("btn");
+
+
+
+
+    btn.onclick = function andregradsfunksjon(a, b, c){
+        a = Number(inp1.value);
+        b = Number(inp2.value);
+        c = Number(inp3.value);
+        z = (b*b)-4*a*c;
+        console.log(z);
+        var negativTest = Math.sign(a * 2);
+        if(negativTest === -1) {
+            console.log("Går ikke an");
+        }
+        else if(z < 0) {
+            console.log("dette går ikke an");
+        }
+        else {
+            var x1 = (-(b) + Math.sqrt(z))/ (a * 2);
+            var x2 = (-(b) - Math.sqrt(z))/ (a * 2);
+            console.log("x1 = " + x1 + ", x2 = " + x2);
+        }
+
+
+    }
+
+
+
+</script>
+
+
+</body>
+</html>

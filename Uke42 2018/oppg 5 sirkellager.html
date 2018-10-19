@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sirkellager</title>
+
+    <style>
+        canvas{
+            border: solid;
+        }
+    </style>
+
+
+</head>
+<body>
+
+
+<canvas id="canvas" height="600" width="600"></canvas>
+
+<script>
+
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+
+
+
+    document.onclick = function(e) {
+        var x = e.pageX;
+        var y = e.pageY;
+
+        ctx.fillStyle = getRandomColor();
+        ctx.beginPath();
+        ctx.arc(x, y, 25, 0, Math.PI*2);
+        ctx.fill();
+    }
+
+
+    // Få tilfeldig farge
+    function getRandomColor(){
+        let letters = "0123456789ABCDEF";
+        let color = "#";
+        for(let i = 0; i < 6; i++){
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

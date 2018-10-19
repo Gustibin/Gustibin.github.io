@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>fibonaccicanvas</title>
+
+    <style>
+        canvas{
+            border: solid;
+        }
+        #firkant{
+         border: solid
+        }
+    </style>
+
+</head>
+<body>
+
+
+
+<canvas id="canvas" height="1000" width="1000"></canvas>
+
+<script>
+
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+
+
+    var k = 100;
+    var j = 1;
+    var z = 1;
+    var l = 1;
+    var n = 1;
+    var cSize = j*10 + "px Arial";
+
+
+
+    for (var i = 1; i < 8; i++){
+
+        j = j + z;
+        z = j - z;
+        l = (j*25)/2;
+        n = (z*25)/2;
+        cSize = j*3 + "px Arial";
+
+        console.log("Fibonaccitall nr " + i +  " = " + j);
+
+        ctx.font = cSize;
+        ctx.fillText("Nr. " +i,500-l/3.5,500-n);
+
+        ctx.strokeStyle = "blue";
+        ctx.strokeRect(500-l, 500-n, j *25, z*25);
+    };
+
+
+
+
+
+</script>
+
+</body>
+</html>

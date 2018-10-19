@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>n^4</title>
+</head>
+<body>
+
+<input id="inp" type=number placeholder="Skriv et tall">
+<br>
+<button id="btnRegnUt">Regn ut</button>
+
+<script>
+
+    var inp = document.getElementById("inp");
+    var btnRegnUt = document.getElementById("btnRegnUt");
+
+
+
+
+
+    btnRegnUt.onclick = function iFjerde(n){
+        n = Number(inp.value);
+        var nOpphøyd = n * n * n * n;
+        console.log("tallet ditt i fjerde blir " + nOpphøyd);
+        return;
+    }
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
