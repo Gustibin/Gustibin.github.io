@@ -45,13 +45,19 @@
 <script>
 
 
-
-
     const divTeller = document.getElementById("divTeller");
     const medFølge = document.getElementById("medFølge");
     const btnRegistrer = document.getElementById("btnRegistrer");
 
-    let antall = 0;
+    let database = firebase.database();
+    let antall = database.ref("antall");
+    antall.push(nyttAntall);
+    function visAntall(snapshot){
+        var antall = snapshot.val();
+        divTeller.innerHTML += '<p>${antall.avsender}sier${antall.number}</p>'
+    }
+    antaller.on("child_added", visAntall);
+
 
     btnRegistrer.onclick = function () {
 
