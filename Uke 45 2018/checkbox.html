@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>checkbox</title>
+    <link rel="stylesheet" href="StilArk.css">
+</head>
+<body>
+
+<main>
+
+    <div id="app">
+        <h2>Nyttårsaften 2018/2019</h2>
+        <div id="boks">
+            <h4>Antall påmeldte</h4>
+            <div id="divTeller">0</div>
+        </div>
+        <div id="skjema">
+            <h5>Registrer deg her</h5>
+            <input type="checkbox" id="medFølge">
+            <label for="medFølge">Med følge?</label>
+            <button id="btnRegistrer">Registrer</button>
+        </div>
+    </div>
+
+</main>
+
+
+<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCRaAK_Onh7XP3ouDVjr8hwIIf13kJHBb0",
+        authDomain: "bursdagsinvitasjon.firebaseapp.com",
+        databaseURL: "https://bursdagsinvitasjon.firebaseio.com",
+        projectId: "bursdagsinvitasjon",
+        storageBucket: "bursdagsinvitasjon.appspot.com",
+        messagingSenderId: "934219317787"
+    };
+    firebase.initializeApp(config);
+</script>
+
+
+<script>
+
+
+
+
+    const divTeller = document.getElementById("divTeller");
+    const medFølge = document.getElementById("medFølge");
+    const btnRegistrer = document.getElementById("btnRegistrer");
+
+    let antall = 0;
+
+    btnRegistrer.onclick = function () {
+
+        if(medFølge.checked) {
+            antall += 2;
+            divTeller.innerHTML = antall;
+        }
+        else{
+            antall += 1;
+            divTeller.innerHTML = antall;
+        }
+    }
+
+
+
+</script>
+
+</body>
+</html>

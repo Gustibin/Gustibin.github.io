@@ -1,0 +1,19 @@
+#app{
+    background-color: burlywood;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2%;
+    font-family: "Open sans", Helvetica, Arial, sans-serif;
+}
+
+#boks{
+    border: solid 1px black;
+    text-align: center;
+    padding: 4%;
+}
+
+#divTeller{
+    font-size: 64px;
+}
