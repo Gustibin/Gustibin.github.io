@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oppg 3</title>
+
+    <button id="btnRandom">Tilfeldig bilde</button>
+
+    <img id="blankBilde" src="">
+
+
+
+
+</head>
+<body>
+
+
+<script>
+
+
+    randomBilder = ["img1.jpg", "img2.jpg", "img3.jpg", "img4.jpg", "img5.jpg"];
+
+    var blankBilde = document.getElementById("blankBilde");
+
+
+    btnRandom.onclick = random;
+
+
+    function random() {
+        blankBilde.src = randomBilder[Math.floor(Math.random() * 6)];
+    }
+
+</script>
+
+
+</body>
+</html>

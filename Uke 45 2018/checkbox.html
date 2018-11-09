@@ -5,75 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>checkbox</title>
     <link rel="stylesheet" href="StilArk.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCRaAK_Onh7XP3ouDVjr8hwIIf13kJHBb0",
+            authDomain: "bursdagsinvitasjon.firebaseapp.com",
+            databaseURL: "https://bursdagsinvitasjon.firebaseio.com",
+            projectId: "bursdagsinvitasjon",
+            storageBucket: "bursdagsinvitasjon.appspot.com",
+            messagingSenderId: "934219317787"
+        };
+        firebase.initializeApp(config);
+    </script>
+
 </head>
 <body>
-
 <main>
-
     <div id="app">
-        <h2>Nyttårsaften 2018/2019</h2>
-        <div id="boks">
-            <h4>Antall påmeldte</h4>
+        <h1>Nyttårsturen</h1>
+        <div id="antall">
+            <h3>Antall påmeldte:</h3>
             <div id="divTeller">0</div>
         </div>
         <div id="skjema">
-            <h5>Registrer deg her</h5>
-            <input type="checkbox" id="medFølge">
-            <label for="medFølge">Med følge?</label>
-            <button id="btnRegistrer">Registrer</button>
+            <h3>Registrer deg her</h3>
+            <div id="knapper">
+                <input type="checkbox" id="medFolge">
+                <label for="medFolge">Med følge</label>
+            </div>
+            <button id="registrer">Registrer</button>
         </div>
     </div>
-
 </main>
 
-
-<script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
 <script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyCRaAK_Onh7XP3ouDVjr8hwIIf13kJHBb0",
-        authDomain: "bursdagsinvitasjon.firebaseapp.com",
-        databaseURL: "https://bursdagsinvitasjon.firebaseio.com",
-        projectId: "bursdagsinvitasjon",
-        storageBucket: "bursdagsinvitasjon.appspot.com",
-        messagingSenderId: "934219317787"
-    };
-    firebase.initializeApp(config);
-</script>
-
-
-<script>
-
-
     const divTeller = document.getElementById("divTeller");
-    const medFølge = document.getElementById("medFølge");
-    const btnRegistrer = document.getElementById("btnRegistrer");
-
-    let database = firebase.database();
-    let antall = database.ref("antall");
-    antall.push(nyttAntall);
-    function visAntall(snapshot){
-        var antall = snapshot.val();
-        divTeller.innerHTML += '<p>${antall.avsender}sier${antall.number}</p>'
-    }
-    antaller.on("child_added", visAntall);
-
-
-    btnRegistrer.onclick = function () {
-
-        if(medFølge.checked) {
-            antall += 2;
-            divTeller.innerHTML = antall;
+    const medFolge = document.getElementById("medFolge");
+    const registrer = document.getElementById("registrer");
+    // --Firebase--
+    const database = firebase.database(); // Lager en variabel som refererer til firebase databasen
+    const register = database.ref("register"); // Lager en variabel som refererer til register delen av databasen
+    // ----------
+    let antall = 0; // En global variabel for antall påmeldte
+    registrer.onclick = function(){ // En funksjon som kjører når en bruker trykker på registrer-knappen
+        antall += 1; // Pluss en på antall
+        if(medFolge.checked){ // Hvis med følge er huket av gjør følgende:
+            antall +=1; // Pluss enda en på antall
         }
-        else{
-            antall += 1;
-            divTeller.innerHTML = antall;
-        }
+        //---- Firebase ----
+        register.push(antall); // skriver antallet til databasen
+        //-----------------
     }
-
+    //----- Firebase ----
+    function visAntall(snapshot){ // En funksjon som leser antallet fra databasen
+        let dbAntall = snapshot.val(); // Lager en variabel som er et "snapshot" av databasen på tidspunktet funksjonen kjøres
+        antall = dbAntall; // Oppdaterer telleren antall med verdien fra elementene i databasen
+        divTeller.innerHTML = antall; // Skriver ut det oppdaterte antallet på nettsiden
+    }
+    register.on("child_added",visAntall); // Hendelsesstyrt funksjon som starter når databasen oppdateres
+    //---------------------
 
 
 </script>
-
 </body>
 </html>

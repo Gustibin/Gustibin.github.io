@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>brannsystem</title>
+    <link rel="stylesheet" href="StilArk.css">
+</head>
+<body>
+
+<main>
+
+    <div id="app">
+        <h2>Lanparty i gymsalen</h2>
+        <div id="boks">
+            <h4>Antall i salen</h4>
+            <div id="divTeller">0</div>
+        </div>
+        <div id="skjema">
+            <h5>Inn eller ut?</h5>
+            <button id="btnPluss">+</button>
+            <button id="btnMinus">-</button>
+        </div>
+    </div>
+
+</main>
+
+
+<script>
+
+
+    const divTeller = document.getElementById("divTeller");
+
+    let antall = 30;
+
+    btnPluss.onclick = plusPerson;
+    btnMinus.onclick = minusPerson;
+
+
+    window.onkeydown = function(event){
+        if(event.code === "ArrowUp"){
+            plusPerson()
+        }
+        else if (event.code === "ArrowDown"){
+            minusPerson()
+        }
+    };
+
+    function plusPerson() {
+        antall += 1;
+        divTeller.innerHTML = antall;
+        if(antall === 40){
+            alert("oioi");
+        };
+        if(antall > 60){
+            alert("For mange folk!")
+        }
+
+    };
+
+    function minusPerson() {
+        antall -= 1;
+        divTeller.innerHTML = antall;
+    };
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

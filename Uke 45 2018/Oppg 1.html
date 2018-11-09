@@ -8,13 +8,18 @@
 <body>
 
 <p>Kaffe eller te?</p>
+
+
 <label><input type="checkbox" name="rgbBestilling" id=rbKaffe>Kaffe</label>
 <label><input type="checkbox" name="rgbBestilling" id=rbTe>Te</label>
 
 
 <label><input type="checkbox" name="rgbTilbehør" id=rbKjeks>Kjeks</label>
 <label><input type="checkbox" name="rgbTilbehør" id=rbSmultring>Smultring</label>
-<button id=btnGimmie">Gimmie</button>
+
+
+
+<button id="btnGimmie">Gimmie</button>
 <p id="info"></p>
 
 <script>
@@ -22,21 +27,29 @@
     var rbTe = document.getElementById("rbTe");
     var info = document.getElementById("info");
     var btnGimmie = document.getElementById("btnGimmie");
-
-    btnGimmie.onlick = function sjekkBestilling() {
-        switch(sjekkBestilling){
-            case rbTe.checked:
-                innerHTML = "Du valgte te";
-                break;
-            case "verdi2":
-            case "verdi3":
-
-                break;
-            default:
-        }
-    };
     var rbKjeks = document.getElementById("rbKjeks");
     var rbSmultring = document.getElementById("rbSmultring");
+
+    btnGimmie.onclick = function() {
+
+        info.innerHTML = "";
+
+        if(rbKaffe.checked){
+            info.innerHTML += "Kaffe";
+        }
+        if(rbTe.checked){
+            info.innerHTML += ", Te";
+        }
+        if(rbKjeks.checked){
+            info.innerHTML += ", Kjeks";
+        }
+        if(rbSmultring.checked){
+            info.innerHTML += ", Smultring";
+        }
+
+
+    };
+
 
 
 </script>
