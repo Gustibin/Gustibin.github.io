@@ -31,6 +31,9 @@
     </div>
 </div>
 
+<audio src="correct.wav" id="correct"></audio>
+<audio src="wrong.wav" id="wrong"></audio>
+
 
 
 
@@ -42,6 +45,9 @@
     const svar2 = document.getElementById("svar2");
     const svar3 = document.getElementById("svar3");
     const svar4 = document.getElementById("svar4");
+    const correct = document.getElementById("correct");
+    const wrong = document.getElementById("wrong");
+
 
     let spørsmål1 = ["Hva er 5x2?", "16", "12", "8", "10"];
     let spørsmål2 = ["Hva er Hovedstaten i Norge?", "Kristiania", "Moss", "Oslo", "Fredrikstad"];
@@ -51,8 +57,6 @@
     let svar2Value = 0;
     let svar3Value = 0;
     let svar4Value = 1;
-
-    let correct = new Audio("correct");
 
 
 
@@ -64,6 +68,23 @@
                 svar2.innerHTML = spørsmål1[2];
                 svar3.innerHTML = spørsmål1[3];
                 svar4.innerHTML = spørsmål1[4];
+
+                svar1.onclick = function(){
+                    wrong.play();
+                };
+
+                svar2.onclick = function(){
+                    wrong.play();
+                };
+
+                svar3.onclick = function(){
+                    wrong.play();
+                };
+
+                svar4.onclick = function(){
+                    correct.play();
+                    i = i +1;
+                };
             }
 
             else if(i === 2){
@@ -74,11 +95,9 @@
                 svar4.innerHTML = spørsmål2[4];
             }
 
-        svar1.onclick = function klikk1(){
-                correct.play();
-            }
 
 
+    console.log(i)
 
 
 
