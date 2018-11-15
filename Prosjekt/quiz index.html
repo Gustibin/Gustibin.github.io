@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="overskrift">
+    <h1>Quizzers</h1>
+</div>
+
+<div id="spørsmål">
+    <h1></h1>
+</div>
+
+<div class="grades">
+    <div id="svar1">
+        <h1></h1>
+    </div>
+        <div id="svar2">
+            <h1></h1>
+        </div>
+        <div id="svar3">
+            <h1></h1>
+        </div>
+        <div id="svar4">
+            <h1></h1>
+    </div>
+</div>
+
+
+
+
+<script>
+
+    const spørsmål = document.getElementById("spørsmål");
+    const grades = document.getElementById("grades");
+    const svar1 = document.getElementById("svar1");
+    const svar2 = document.getElementById("svar2");
+    const svar3 = document.getElementById("svar3");
+    const svar4 = document.getElementById("svar4");
+
+    let spørsmål1 = ["Hva er 5x2?", "16", "12", "8", "10"];
+    let spørsmål2 = ["Hva er Hovedstaten i Norge?", "Kristiania", "Moss", "Oslo", "Fredrikstad"];
+
+    var i = 1;
+    let svar1Value = 0;
+    let svar2Value = 0;
+    let svar3Value = 0;
+    let svar4Value = 1;
+
+    let correct = new Audio("correct");
+
+
+
+
+
+            if(i === 1) {
+                spørsmål.innerHTML = spørsmål1[0];
+                svar1.innerHTML = spørsmål1[1];
+                svar2.innerHTML = spørsmål1[2];
+                svar3.innerHTML = spørsmål1[3];
+                svar4.innerHTML = spørsmål1[4];
+            }
+
+            else if(i === 2){
+                spørsmål.innerHTML = spørsmål2[0];
+                svar1.innerHTML = spørsmål2[1];
+                svar2.innerHTML = spørsmål2[2];
+                svar3.innerHTML = spørsmål2[3];
+                svar4.innerHTML = spørsmål2[4];
+            }
+
+        svar1.onclick = function klikk1(){
+                correct.play();
+            }
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

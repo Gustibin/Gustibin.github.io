@@ -1,0 +1,94 @@
+body{
+    background-color: #ffcba3;
+}
+
+#overskrift{
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 2px;
+    float: left;
+    width: 100%;
+    height: 50%;
+    background-color: #FFB57C;
+    border: 10px solid #ffa25a;
+    text-align: center;
+    color: white;
+}
+
+#spørsmål {
+
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 10px;
+    float: left;
+    width: 100%;
+    height: 50%;
+    background-color: antiquewhite;
+    border: 80px solid #ffa25a;
+    text-align: center;
+}
+
+.grades {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#svar1 {
+    box-sizing: border-box;
+    padding: 10px;
+    float: left;
+    width: 50%;
+    height: 50%;
+    background-color: antiquewhite;
+    border: 60px solid #a6c1f5;
+    text-align: center;
+}
+
+#svar2 {
+    box-sizing: border-box;
+    padding: 10px;
+    float: left;
+    width: 50%;
+    height: 50%;
+    background-color: antiquewhite;
+    border: 60px solid #a6c1f5;
+    text-align: center;
+}
+
+#svar3 {
+    box-sizing: border-box;
+    padding: 10px;
+    float: left;
+    width: 50%;
+    height: 50%;
+    background-color: antiquewhite;
+    border: 60px solid #a6c1f5;
+    text-align: center;
+}
+
+#svar4 {
+    box-sizing: border-box;
+    padding: 10px;
+    float: left;
+    width: 50%;
+    height: 50%;
+    background-color: antiquewhite;
+    border: 60px solid #a6c1f5;
+    text-align: center;
+}
+
+
+    #svar1:hover{
+      border: 60px solid #5881d3;
+  }
+#svar2:hover{
+    border: 60px solid #5881d3;
+}
+
+#svar3:hover{
+    border: 60px solid #5881d3;
+}
+
+#svar4:hover{
+    border: 60px solid #5881d3;
+}
