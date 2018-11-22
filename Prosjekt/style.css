@@ -92,3 +92,11 @@ body{
 #svar4:hover{
     border: 60px solid #5881d3;
 }
+
+#poeng{
+    position: absolute;
+    border: 10px solid #a6c1f5;
+    background-color: antiquewhite;
+    padding: 10px;
+    font-size: 200%;
+}
