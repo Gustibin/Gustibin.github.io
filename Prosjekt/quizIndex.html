@@ -10,6 +10,8 @@
 
 <div id="poeng"></div>
 
+<img src="tenke.jpg" id="bilde">
+
 <div id="overskrift">
     <h1>Quizzers</h1>
 </div>
@@ -50,18 +52,22 @@
     const correct = document.getElementById("correct");
     const wrong = document.getElementById("wrong");
     const poeng = document.getElementById("poeng");
+    const bilde = document.getElementById("bilde");
 
 
     let spørsmål1 = ["Hva er 5x2?", "16", "12", "8", "10"];
     let spørsmål2 = ["Hva er Hovedstaten i Norge?", "Kristiania", "Moss", "Oslo", "Fredrikstad"];
     let spørsmål3 = ["Hvor mange andekrefter er det i en hestekreft?", "175", "200", "150", "50"];
     let spørsmål4 = ["Hvor mange innbyggere er det i Sverige?", "7 mill", "12 mill", "10 mill", "8 mill"];
-    let spørsmål5 = ["Når døde Cæsar?", "44 f.Kr", "24 e.Kr", "30 f.Kr", "50 e.Kr"];
-    let spørsmål6 = ["Når startet 1VK?", "1890", "1920", "1914", "1918"];
+
 
 
         var i = 1;
         var y = 0;
+        var spørsmål1Verdi = 0;
+        var spørsmål2Verdi = 0;
+        var spørsmål3Verdi = 0;
+        var spørsmål4Verdi = 0;
 
 
 
@@ -79,26 +85,53 @@
         console.log(i);
         if(i === 1){
             if (event.target === svar1){
-                y = y - 1;
-                wrong.play();
-                poeng.innerHTML = y;
-            }
-            else if (event.target === svar2){
+                i++;
                 y = y - 1;
                 wrong.play();
 
+                spørsmål.innerHTML = spørsmål2[0];
+                svar1.innerHTML = spørsmål2[1];
+                svar2.innerHTML = spørsmål2[2];
+                svar3.innerHTML = spørsmål2[3];
+                svar4.innerHTML = spørsmål2[4];
+
                 poeng.innerHTML = y;
+                return;
             }
-            else if (event.target === svar3){
+            else if (event.target === svar2){
+                i++;
                 y = y - 1;
                 wrong.play();
+
+                spørsmål.innerHTML = spørsmål2[0];
+                svar1.innerHTML = spørsmål2[1];
+                svar2.innerHTML = spørsmål2[2];
+                svar3.innerHTML = spørsmål2[3];
+                svar4.innerHTML = spørsmål2[4];
+
                 poeng.innerHTML = y;
+                return;
+            }
+            else if (event.target === svar3){
+                i++;
+                y = y - 1;
+                wrong.play();
+
+                spørsmål.innerHTML = spørsmål2[0];
+                svar1.innerHTML = spørsmål2[1];
+                svar2.innerHTML = spørsmål2[2];
+                svar3.innerHTML = spørsmål2[3];
+                svar4.innerHTML = spørsmål2[4];
+
+                poeng.innerHTML = y;
+                return;
             }
             else if (event.target === svar4){
                 console.log("riktig");
                 correct.play();
                 y = y + 1;
                 i++;
+                spørsmål1Verdi = 1;
 
                 spørsmål.innerHTML = spørsmål2[0];
                 svar1.innerHTML = spørsmål2[1];
@@ -115,20 +148,39 @@
 
         if(i === 2){
             if (event.target === svar1){
+                i++;
                 y = y - 1;
                 wrong.play();
+
+                spørsmål.innerHTML = spørsmål3[0];
+                svar1.innerHTML = spørsmål3[1];
+                svar2.innerHTML = spørsmål3[2];
+                svar3.innerHTML = spørsmål3[3];
+                svar4.innerHTML = spørsmål3[4];
+
                 poeng.innerHTML = y;
+                return;
             }
             else if (event.target === svar2){
+                i++;
                 y = y - 1;
                 wrong.play();
+
+                spørsmål.innerHTML = spørsmål3[0];
+                svar1.innerHTML = spørsmål3[1];
+                svar2.innerHTML = spørsmål3[2];
+                svar3.innerHTML = spørsmål3[3];
+                svar4.innerHTML = spørsmål3[4];
+
                 poeng.innerHTML = y;
+                return;
             }
             else if (event.target === svar3){
                 i++;
                 y = y + 1;
                 console.log("riktig");
                 correct.play();
+                spørsmål2Verdi = 1;
 
                 spørsmål.innerHTML = spørsmål3[0];
                 svar1.innerHTML = spørsmål3[1];
@@ -140,9 +192,18 @@
                 return;
             }
             else if (event.target === svar4){
+                i++;
                 y = y - 1;
                 wrong.play();
+
+                spørsmål.innerHTML = spørsmål3[0];
+                svar1.innerHTML = spørsmål3[1];
+                svar2.innerHTML = spørsmål3[2];
+                svar3.innerHTML = spørsmål3[3];
+                svar4.innerHTML = spørsmål3[4];
+
                 poeng.innerHTML = y;
+                return;
             }
         }
 
@@ -152,6 +213,7 @@
                 y = y + 1;
                 console.log("riktig");
                 correct.play();
+                spørsmål3Verdi = 1;
 
                 spørsmål.innerHTML = spørsmål4[0];
                 svar1.innerHTML = spørsmål4[1];
@@ -164,19 +226,46 @@
 
             }
             else if (event.target === svar2){
+                i++;
                 y = y - 1;
                 wrong.play();
+
+                spørsmål.innerHTML = spørsmål4[0];
+                svar1.innerHTML = spørsmål4[1];
+                svar2.innerHTML = spørsmål4[2];
+                svar3.innerHTML = spørsmål4[3];
+                svar4.innerHTML = spørsmål4[4];
+
                 poeng.innerHTML = y;
+                return;
             }
             else if (event.target === svar3){
+                i++;
                 y = y - 1;
                 wrong.play();
+
+                spørsmål.innerHTML = spørsmål4[0];
+                svar1.innerHTML = spørsmål4[1];
+                svar2.innerHTML = spørsmål4[2];
+                svar3.innerHTML = spørsmål4[3];
+                svar4.innerHTML = spørsmål4[4];
+
                 poeng.innerHTML = y;
+                return;
             }
             else if (event.target === svar4){
+                i++;
                 y = y - 1;
                 wrong.play();
+
+                spørsmål.innerHTML = spørsmål4[0];
+                svar1.innerHTML = spørsmål4[1];
+                svar2.innerHTML = spørsmål4[2];
+                svar3.innerHTML = spørsmål4[3];
+                svar4.innerHTML = spørsmål4[4];
+
                 poeng.innerHTML = y;
+                return;
             }
         }
 
@@ -185,90 +274,292 @@
                 y = y - 1;
                 wrong.play();
                 poeng.innerHTML = y;
+
+                console.log("nr 1: " + spørsmål1Verdi);
+                console.log("nr 2: " + spørsmål2Verdi);
+                console.log("nr 3: " + spørsmål3Verdi);
+                console.log("nr4: " + spørsmål4Verdi);
+
+                spørsmålSum = spørsmål1Verdi + spørsmål2Verdi + spørsmål3Verdi + spørsmål4Verdi;
+
+                console.log("sum: " + spørsmålSum);
+
+                spørsmål.innerHTML = "Ferdig!";
+                if(spørsmål1Verdi === 1){
+                    svar1.style.backgroundColor = "green";
+                    svar1.innerHTML = "Spørsmål 1 svar: 10";
+                }
+                else{
+                    svar1.style.backgroundColor = "red";
+                    svar1.innerHTML = "Spørsmål 1 svar: 10";
+                }
+
+                if(spørsmål2Verdi === 1){
+                    svar2.style.backgroundColor = "green";
+                    svar2.innerHTML = "Spørsmål 2 svar: Oslo";
+                }
+                else{
+                    svar2.style.backgroundColor = "red";
+                    svar2.innerHTML = "Spørsmål 2 svar: Oslo";
+
+                }
+
+                if(spørsmål3Verdi === 1){
+                    svar3.style.backgroundColor = "green";
+                    svar3.innerHTML = "Spørsmål 3 svar: 175";
+
+                }
+                else{
+                    svar3.style.backgroundColor = "red";
+                    svar3.innerHTML = "Spørsmål 3 svar: 175";
+
+                }
+
+                if(spørsmål4Verdi === 1){
+                    svar4.style.backgroundColor = "green";
+                    svar4.innerHTML = "Spørsmål 4 svar: 10mill";
+
+                }
+                else{
+                    svar4.style.backgroundColor = "red";
+                    svar4.innerHTML = "Spørsmål 4 svar: 10mill";
+
+                }
+
+
+                if(spørsmålSum === 1){
+                    bilde.src = "1riktig.jpg";
+                }
+                else if(spørsmålSum === 2){
+                    bilde.src = "2riktig.jpg";
+                }
+                else if(spørsmålSum === 3){
+                    bilde.src = "3riktig.jpg";
+                }
+                else if(spørsmålSum === 4){
+                    bilde.src = "4riktig.jpg";
+                }
+
+                return;
             }
             else if (event.target === svar2){
                 y = y - 1;
                 wrong.play();
                 poeng.innerHTML = y;
+
+                console.log("nr 1: " + spørsmål1Verdi);
+                console.log("nr 2: " + spørsmål2Verdi);
+                console.log("nr 3: " + spørsmål3Verdi);
+                console.log("nr4: " + spørsmål4Verdi);
+
+                spørsmålSum = spørsmål1Verdi + spørsmål2Verdi + spørsmål3Verdi + spørsmål4Verdi;
+
+                console.log("sum: " + spørsmålSum);
+
+                spørsmål.innerHTML = "Ferdig!";
+                if(spørsmål1Verdi === 1){
+                    svar1.style.backgroundColor = "green";
+                    svar1.innerHTML = "Spørsmål 1 svar: 10";
+                }
+                else{
+                    svar1.style.backgroundColor = "red";
+                    svar1.innerHTML = "Spørsmål 1 svar: 10";
+                }
+
+                if(spørsmål2Verdi === 1){
+                    svar2.style.backgroundColor = "green";
+                    svar2.innerHTML = "Spørsmål 2 svar: Oslo";
+                }
+                else{
+                    svar2.style.backgroundColor = "red";
+                    svar2.innerHTML = "Spørsmål 2 svar: Oslo";
+
+                }
+
+                if(spørsmål3Verdi === 1){
+                    svar3.style.backgroundColor = "green";
+                    svar3.innerHTML = "Spørsmål 3 svar: 175";
+
+                }
+                else{
+                    svar3.style.backgroundColor = "red";
+                    svar3.innerHTML = "Spørsmål 3 svar: 175";
+
+                }
+
+                if(spørsmål4Verdi === 1){
+                    svar4.style.backgroundColor = "green";
+                    svar4.innerHTML = "Spørsmål 4 svar: 10mill";
+
+                }
+                else{
+                    svar4.style.backgroundColor = "red";
+                    svar4.innerHTML = "Spørsmål 4 svar: 10mill";
+
+                }
+
+
+                if(spørsmålSum === 1){
+                    bilde.src = "1riktig.jpg";
+                }
+                else if(spørsmålSum === 2){
+                    bilde.src = "2riktig.jpg";
+                }
+                else if(spørsmålSum === 3){
+                    bilde.src = "3riktig.jpg";
+                }
+                else if(spørsmålSum === 4){
+                    bilde.src = "4riktig.jpg";
+                }
+
+                return;
             }
             else if (event.target === svar3){
                 i++;
                 y = y + 1;
                 console.log("riktig");
                 correct.play();
-
-                spørsmål.innerHTML = spørsmål5[0];
-                svar1.innerHTML = spørsmål5[1];
-                svar2.innerHTML = spørsmål5[2];
-                svar3.innerHTML = spørsmål5[3];
-                svar4.innerHTML = spørsmål5[4];
-
                 poeng.innerHTML = y;
+                spørsmål4Verdi = 1;
+
+                console.log("nr 1: " + spørsmål1Verdi);
+                console.log("nr 2: " + spørsmål2Verdi);
+                console.log("nr 3: " + spørsmål3Verdi);
+                console.log("nr4: " + spørsmål4Verdi);
+
+                spørsmålSum = spørsmål1Verdi + spørsmål2Verdi + spørsmål3Verdi + spørsmål4Verdi;
+
+                console.log("sum: " + spørsmålSum);
+
+                spørsmål.innerHTML = "Ferdig!";
+                if(spørsmål1Verdi === 1){
+                    svar1.style.backgroundColor = "green";
+                    svar1.innerHTML = "Spørsmål 1 svar: 10";
+                }
+                else{
+                    svar1.style.backgroundColor = "red";
+                    svar1.innerHTML = "Spørsmål 1 svar: 10";
+                }
+
+                if(spørsmål2Verdi === 1){
+                    svar2.style.backgroundColor = "green";
+                    svar2.innerHTML = "Spørsmål 2 svar: Oslo";
+                }
+                else{
+                    svar2.style.backgroundColor = "red";
+                    svar2.innerHTML = "Spørsmål 2 svar: Oslo";
+
+                }
+
+                if(spørsmål3Verdi === 1){
+                    svar3.style.backgroundColor = "green";
+                    svar3.innerHTML = "Spørsmål 3 svar: 175";
+
+                }
+                else{
+                    svar3.style.backgroundColor = "red";
+                    svar3.innerHTML = "Spørsmål 3 svar: 175";
+
+                }
+
+                if(spørsmål4Verdi === 1){
+                    svar4.style.backgroundColor = "green";
+                    svar4.innerHTML = "Spørsmål 4 svar: 10mill";
+
+                }
+                else{
+                    svar4.style.backgroundColor = "red";
+                    svar4.innerHTML = "Spørsmål 4 svar: 10mill";
+
+                }
+
+
+                if(spørsmålSum === 1){
+                    bilde.src = "1riktig.jpg";
+                }
+                else if(spørsmålSum === 2){
+                    bilde.src = "2riktig.jpg";
+                }
+                else if(spørsmålSum === 3){
+                    bilde.src = "3riktig.jpg";
+                }
+                else if(spørsmålSum === 4){
+                    bilde.src = "4riktig.jpg";
+                }
+
                 return;
             }
             else if (event.target === svar4){
                 y = y - 1;
                 wrong.play();
-                poeng.innerHTML = y;
-            }
-        }
+                poeng.innerHTML = y;console.log("nr 1: " + spørsmål1Verdi);
+                console.log("nr 2: " + spørsmål2Verdi);
+                console.log("nr 3: " + spørsmål3Verdi);
+                console.log("nr4: " + spørsmål4Verdi);
 
-        if(i === 5){
-            if (event.target === svar1){
-                i++;
-                y = y + 1;
-                console.log("riktig");
-                correct.play();
+                spørsmålSum = spørsmål1Verdi + spørsmål2Verdi + spørsmål3Verdi + spørsmål4Verdi;
 
-                spørsmål.innerHTML = spørsmål6[0];
-                svar1.innerHTML = spørsmål6[1];
-                svar2.innerHTML = spørsmål6[2];
-                svar3.innerHTML = spørsmål6[3];
-                svar4.innerHTML = spørsmål6[4];
+                console.log("sum: " + spørsmålSum);
 
-                poeng.innerHTML = y;
+                spørsmål.innerHTML = "Ferdig!";
+                if(spørsmål1Verdi === 1){
+                    svar1.style.backgroundColor = "green";
+                    svar1.innerHTML = "Spørsmål 1 svar: 10";
+                }
+                else{
+                    svar1.style.backgroundColor = "red";
+                    svar1.innerHTML = "Spørsmål 1 svar: 10";
+                }
+
+                if(spørsmål2Verdi === 1){
+                    svar2.style.backgroundColor = "green";
+                    svar2.innerHTML = "Spørsmål 2 svar: Oslo";
+                }
+                else{
+                    svar2.style.backgroundColor = "red";
+                    svar2.innerHTML = "Spørsmål 2 svar: Oslo";
+
+                }
+
+                if(spørsmål3Verdi === 1){
+                    svar3.style.backgroundColor = "green";
+                    svar3.innerHTML = "Spørsmål 3 svar: 175";
+
+                }
+                else{
+                    svar3.style.backgroundColor = "red";
+                    svar3.innerHTML = "Spørsmål 3 svar: 175";
+
+                }
+
+                if(spørsmål4Verdi === 1){
+                    svar4.style.backgroundColor = "green";
+                    svar4.innerHTML = "Spørsmål 4 svar: 10mill";
+
+                }
+                else{
+                    svar4.style.backgroundColor = "red";
+                    svar4.innerHTML = "Spørsmål 4 svar: 10mill";
+
+                }
+
+
+                if(spørsmålSum === 1){
+                    bilde.src = "1riktig.jpg";
+                }
+                else if(spørsmålSum === 2){
+                    bilde.src = "2riktig.jpg";
+                }
+                else if(spørsmålSum === 3){
+                    bilde.src = "3riktig.jpg";
+                }
+                else if(spørsmålSum === 4){
+                    bilde.src = "4riktig.jpg";
+                }
+
                 return;
-            }
-            else if (event.target === svar2){
-                y = y - 1;
-                wrong.play();
-                poeng.innerHTML = y;
-            }
-            else if (event.target === svar3){
-                y = y - 1;
-                wrong.play();
-                poeng.innerHTML = y;
-            }
-            else if (event.target === svar4){
-                y = y - 1;
-                wrong.play();
-                poeng.innerHTML = y;
-            }
-        }
 
-        if(i === 6){
-            if (event.target === svar1){
-                y = y - 1;
-                wrong.play();
-                poeng.innerHTML = y;
-            }
-            else if (event.target === svar2){
-                y = y - 1;
-                wrong.play();
-                poeng.innerHTML = y;
-            }
-            else if (event.target === svar3){
-                i++;
-                console.log("riktig");
-                correct.play();
-                poeng.innerHTML = y;
-                window.location.href = "http://localhost:63342/Gustibin.github.io/Prosjekt/Ferdig.html?_ijt=vev12cl2hkftbbmvfsdsmuqb5t";
-                return;
-            }
-            else if (event.target === svar4){
-                y = y - 1;
-                wrong.play();
-                poeng.innerHTML = y;
+
             }
         }
 
