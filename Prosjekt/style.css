@@ -109,3 +109,10 @@ body{
     width: 200px;
     right: 0px;
 }
+
+#altRiktig{
+    position: absolute;
+    width: 25%;
+    left: 37.5%;
+    top: 16%;
+}
