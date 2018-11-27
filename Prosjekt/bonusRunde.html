@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bonusRunde</title>
+
+    <div id="overskrift">
+        <h1>Hvilket tall kommer terningen til å lande på?</h1>
+        <h2>Trykk på et tall fra 1-6 på tastaturet</h2>
+    </div>
+
+
+
+    <input type="text" onkeypress="uniCharCode(event)">
+
+    <p>Hvilken knapp er klikket på - <span id="knapp"></span></p>
+
+    <img src="" id="terningImg">
+
+    <style>
+
+        #terningImg{
+            width: 20%;
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+
+<script>
+
+
+    let knapp = document.getElementById("knapp");
+    let terningImg = document.getElementById("terningImg");
+
+   let terningArray = ["Terning/Lag1.png", "Terning/Lag2.png", "Terning/Lag3.png", "Terning/Lag4.png", "Terning/Lag5.png", "Terning/Lag6.png"];
+
+
+    let counter = 0;
+
+    function start(counter){
+        if(counter < 10){
+            setTimeout(function(){
+                counter++;
+                terningImg.src = terningArray[Math.floor(Math.random() * 7)];
+                console.log(counter);
+                start(counter);
+            }, 1000);
+        }
+    }
+
+
+   function uniCharCode(event) {
+       var char = event.which || event.keyCode;
+       knapp.innerHTML = "Unicode CHARACTER code: " + char;
+
+       let x = 0;
+
+       if(char === 49){
+           x = 1;
+           console.log(x);
+       }
+       else if(char === 50){
+           x = 2;
+           console.log(x);
+       }
+       else if(char === 51){
+           x = 3;
+           console.log(x);
+       }
+       else if(char === 52){
+           x = 4;
+           console.log(x);
+       }
+       else if(char === 53){
+           x = 5;
+           console.log(x);
+       }
+       else if(char === 54){
+           x = 6;
+           console.log(x);
+
+
+       }
+
+       start(counter);
+
+
+   }
+
+</script>
+
+
+
+
+
+</body>
+</html>
