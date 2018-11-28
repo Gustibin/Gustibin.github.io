@@ -40,6 +40,8 @@
 <audio src="correct.wav" id="correct"></audio>
 <audio src="wrong.wav" id="wrong"></audio>
 
+<a href="bonusRunde.html" id="bonusBtn">Klikk for premiespill!</a>
+
 
 
 
@@ -56,6 +58,7 @@
     const poeng = document.getElementById("poeng");
     const bilde = document.getElementById("bilde");
     const altRiktig = document.getElementById("altRiktig");
+    const bonusBtn = document.getElementById("bonusBtn");
 
 
     let spørsmål1 = ["Hva er 5x2?", "16", "12", "8", "10"];
@@ -64,6 +67,8 @@
     let spørsmål4 = ["Hvor mange innbyggere er det i Sverige?", "7 mill", "12 mill", "10 mill", "8 mill"];
 
 
+
+        bonusBtn.style.display = "none";
 
         var i = 1;
         var y = 0;
@@ -413,7 +418,6 @@
                 }
                 else if(spørsmålSum === 4){
                     bilde.src = "4riktig.jpg";
-
                     altRiktig.play()
                 }
 
@@ -493,7 +497,7 @@
 
                     altRiktig.src = "altriktig.mp4";
                     altRiktig.play();
-
+                    bonusBtn.style.display = "block";
                     window.setTimeout("altRiktig.style.display='none';", 12500)
                 }
 

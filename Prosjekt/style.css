@@ -116,3 +116,13 @@ body{
     left: 37.5%;
     top: 16%;
 }
+
+#bonusBtn{
+    position: absolute;
+    border: 10px solid #a6c1f5;
+    background-color: antiquewhite;
+    padding: 10px;
+    width: 200px;
+    right: 0px;
+    top: 235px;
+}

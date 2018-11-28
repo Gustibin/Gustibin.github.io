@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>firePåRadIndex</title>
+</head>
+<body>
+
+<style>
+
+    body{
+        padding: 0;
+    }
+
+    #Regler{
+        position: absolute;
+        right: 10%;
+        top: 20%;
+        size: 200%;
+
+    }
+
+    #maingrid{
+        background-color: #a4a3ad;
+        width: 724px;
+    }
+
+    #Rød1{
+         position: absolute;
+         left: 13px;
+         top: 13px;
+     }
+    #Rød2{
+        position: absolute;
+        left: 116px;
+        top: 13px;
+    }
+    #Rød3{
+        position: absolute;
+        left: 219px;
+        top: 13px;
+    }
+    #Rød4{
+        position: absolute;
+        left: 322px;
+        top: 13px;
+    }
+    #Rød5{
+        position: absolute;
+        left: 425px;
+        top: 13px;
+    }
+    #Rød6{
+        position: absolute;
+        left: 528px;
+        top: 13px;
+    }
+    #Rød7{
+          position: absolute;
+          left: 631px;
+          top: 13px;
+      }
+    #Rød8{
+        position: absolute;
+        left: 13px;
+        top: 116px;
+    }
+    #Rød9{
+        position: absolute;
+        left: 116px;
+        top: 116px;
+    }
+    #Rød10{
+        position: absolute;
+        left: 219px;
+        top: 116px;
+    }
+    #Rød11{
+        position: absolute;
+        left: 322px;
+        top: 116px;
+    }
+    #Rød12{
+        position: absolute;
+        left: 425px;
+        top: 116px;
+    }
+    #Rød13{
+        position: absolute;
+        left: 528px;
+        top: 116px;
+    }
+    #Rød14{
+        position: absolute;
+        left: 631px;
+        top: 116px;
+    }
+    #Rød15{
+        position: absolute;
+        left: 13px;
+        top: 219px;
+    }
+    #Rød16{
+        position: absolute;
+        left: 116px;
+        top: 219px;
+    }
+    #Rød17{
+        position: absolute;
+        left: 219px;
+        top: 219px;
+    }
+    #Rød18{
+        position: absolute;
+        left: 322px;
+        top: 219px;
+    }
+    #Rød19{
+        position: absolute;
+        left: 425px;
+        top: 219px;
+    }
+    #Rød20{
+        position: absolute;
+        left: 528px;
+        top: 219px;
+    }
+    #Rød21{
+        position: absolute;
+        left: 631px;
+        top: 219px;
+    }
+    #Rød22{
+        position: absolute;
+        left: 13px;
+        top: 321px;
+    }
+    #Rød23{
+        position: absolute;
+        left: 116px;
+        top: 321px;
+    }
+    #Rød24{
+        position: absolute;
+        left: 219px;
+        top: 321px;
+    }
+    #Rød25{
+        position: absolute;
+        left: 322px;
+        top: 321px;
+    }
+    #Rød26{
+        position: absolute;
+        left: 425px;
+        top: 321px;
+    }
+    #Rød27{
+        position: absolute;
+        left: 528px;
+        top: 321px;
+    }
+    #Rød28{
+        position: absolute;
+        left: 631px;
+        top: 321px;
+    }
+    #Rød29{
+        position: absolute;
+        left: 13px;
+        top: 424px;
+    }
+    #Rød30{
+        position: absolute;
+        left: 116px;
+        top: 424px;
+    }
+    #Rød31{
+        position: absolute;
+        left: 219px;
+        top: 424px;
+    }
+    #Rød32{
+        position: absolute;
+        left: 322px;
+        top: 424px;
+    }
+    #Rød33{
+        position: absolute;
+        left: 425px;
+        top: 424px;
+    }
+    #Rød34{
+        position: absolute;
+        left: 528px;
+        top: 424px;
+    }
+    #Rød35{
+        position: absolute;
+        left: 631px;
+        top: 424px;
+    }
+    #Rød36{
+        position: absolute;
+        left: 13px;
+        top: 527px;
+    }
+    #Rød37{
+        position: absolute;
+        left: 116px;
+        top: 527px;
+    }
+    #Rød38{
+        position: absolute;
+        left: 219px;
+        top: 527px;
+    }
+    #Rød39{
+        position: absolute;
+        left: 322px;
+        top: 527px;
+    }
+    #Rød40{
+        position: absolute;
+        left: 425px;
+        top: 527px;
+    }
+    #Rød41{
+        position: absolute;
+        left: 528px;
+        top: 527px;
+    }
+    #Rød42{
+        position: absolute;
+        left: 631px;
+        top: 527px;
+    }
+
+    #Gul1{
+        position: absolute;
+        left: 13px;
+        top: 13px;
+    }
+    #Gul2{
+        position: absolute;
+        left: 116px;
+        top: 13px;
+    }
+    #Gul3{
+        position: absolute;
+        left: 219px;
+        top: 13px;
+    }
+    #Gul4{
+        position: absolute;
+        left: 322px;
+        top: 13px;
+    }
+    #Gul5{
+        position: absolute;
+        left: 425px;
+        top: 13px;
+    }
+    #Gul6{
+        position: absolute;
+        left: 528px;
+        top: 13px;
+    }
+    #Gul7{
+        position: absolute;
+        left: 631px;
+        top: 13px;
+    }
+    #Gul8{
+        position: absolute;
+        left: 13px;
+        top: 116px;
+    }
+    #Gul9{
+        position: absolute;
+        left: 116px;
+        top: 116px;
+    }
+    #Gul10{
+        position: absolute;
+        left: 219px;
+        top: 116px;
+    }
+    #Gul11{
+        position: absolute;
+        left: 322px;
+        top: 116px;
+    }
+    #Gul12{
+        position: absolute;
+        left: 425px;
+        top: 116px;
+    }
+    #Gul13{
+        position: absolute;
+        left: 528px;
+        top: 116px;
+    }
+    #Gul14{
+        position: absolute;
+        left: 631px;
+        top: 116px;
+    }
+    #Gul15{
+        position: absolute;
+        left: 13px;
+        top: 219px;
+    }
+    #Gul16{
+        position: absolute;
+        left: 116px;
+        top: 219px;
+    }
+    #Gul17{
+        position: absolute;
+        left: 219px;
+        top: 219px;
+    }
+    #Gul18{
+        position: absolute;
+        left: 322px;
+        top: 219px;
+    }
+    #Gul19{
+        position: absolute;
+        left: 425px;
+        top: 219px;
+    }
+    #Gul20{
+        position: absolute;
+        left: 528px;
+        top: 219px;
+    }
+    #Gul21{
+        position: absolute;
+        left: 631px;
+        top: 219px;
+    }
+    #Gul22{
+        position: absolute;
+        left: 13px;
+        top: 321px;
+    }
+    #Gul23{
+        position: absolute;
+        left: 116px;
+        top: 321px;
+    }
+    #Gul24{
+        position: absolute;
+        left: 219px;
+        top: 321px;
+    }
+    #Gul25{
+        position: absolute;
+        left: 322px;
+        top: 321px;
+    }
+    #Gul26{
+        position: absolute;
+        left: 425px;
+        top: 321px;
+    }
+    #Gul27{
+        position: absolute;
+        left: 528px;
+        top: 321px;
+    }
+    #Gul28{
+        position: absolute;
+        left: 631px;
+        top: 321px;
+    }
+    #Gul29{
+        position: absolute;
+        left: 13px;
+        top: 424px;
+    }
+    #Gul30{
+        position: absolute;
+        left: 116px;
+        top: 424px;
+    }
+    #Gul31{
+        position: absolute;
+        left: 219px;
+        top: 424px;
+    }
+    #Gul32{
+        position: absolute;
+        left: 322px;
+        top: 424px;
+    }
+    #Gul33{
+        position: absolute;
+        left: 425px;
+        top: 424px;
+    }
+    #Gul34{
+        position: absolute;
+        left: 528px;
+        top: 424px;
+    }
+    #Gul35{
+        position: absolute;
+        left: 631px;
+        top: 424px;
+    }
+    #Gul36{
+        position: absolute;
+        left: 13px;
+        top: 527px;
+    }
+    #Gul37{
+        position: absolute;
+        left: 116px;
+        top: 527px;
+    }
+    #Gul38{
+        position: absolute;
+        left: 219px;
+        top: 527px;
+    }
+    #Gul39{
+        position: absolute;
+        left: 322px;
+        top: 527px;
+    }
+    #Gul40{
+        position: absolute;
+        left: 425px;
+        top: 527px;
+    }
+    #Gul41{
+        position: absolute;
+        left: 528px;
+        top: 527px;
+    }
+    #Gul42{
+        position: absolute;
+        left: 631px;
+        top: 527px;
+    }
+
+
+
+</style>
+
+
+<div id="Regler">
+    <h1>Velkommen Rød starter!</h1>
+    <p>Regler er ikke kodet inn så spill med fairplay</p>
+</div>
+
+<div id="maingrid">
+    <img src="engrid.png" id="grid1">
+    <img src="engrid.png" id="grid2">
+    <img src="engrid.png" id="grid3">
+    <img src="engrid.png" id="grid4">
+    <img src="engrid.png" id="grid5">
+    <img src="engrid.png" id="grid6">
+    <img src="engrid.png" id="grid7">
+    <img src="engrid.png" id="grid8">
+    <img src="engrid.png" id="grid9">
+    <img src="engrid.png" id="grid10">
+    <img src="engrid.png" id="grid11">
+    <img src="engrid.png" id="grid12">
+    <img src="engrid.png" id="grid13">
+    <img src="engrid.png" id="grid14">
+    <img src="engrid.png" id="grid15">
+    <img src="engrid.png" id="grid16">
+    <img src="engrid.png" id="grid17">
+    <img src="engrid.png" id="grid18">
+    <img src="engrid.png" id="grid19">
+    <img src="engrid.png" id="grid20">
+    <img src="engrid.png" id="grid21">
+    <img src="engrid.png" id="grid22">
+    <img src="engrid.png" id="grid23">
+    <img src="engrid.png" id="grid24">
+    <img src="engrid.png" id="grid25">
+    <img src="engrid.png" id="grid26">
+    <img src="engrid.png" id="grid27">
+    <img src="engrid.png" id="grid28">
+    <img src="engrid.png" id="grid29">
+    <img src="engrid.png" id="grid30">
+    <img src="engrid.png" id="grid31">
+    <img src="engrid.png" id="grid32">
+    <img src="engrid.png" id="grid33">
+    <img src="engrid.png" id="grid34">
+    <img src="engrid.png" id="grid35">
+    <img src="engrid.png" id="grid36">
+    <img src="engrid.png" id="grid37">
+    <img src="engrid.png" id="grid38">
+    <img src="engrid.png" id="grid39">
+    <img src="engrid.png" id="grid40">
+    <img src="engrid.png" id="grid41">
+    <img src="engrid.png" id="grid42">
+
+
+    <img src="Gul.png" id="Gul1">
+    <img src="Gul.png" id="Gul2">
+    <img src="Gul.png" id="Gul3">
+    <img src="Gul.png" id="Gul4">
+    <img src="Gul.png" id="Gul5">
+    <img src="Gul.png" id="Gul6">
+    <img src="Gul.png" id="Gul7">
+    <img src="Gul.png" id="Gul8">
+    <img src="Gul.png" id="Gul9">
+    <img src="Gul.png" id="Gul10">
+    <img src="Gul.png" id="Gul11">
+    <img src="Gul.png" id="Gul12">
+    <img src="Gul.png" id="Gul13">
+    <img src="Gul.png" id="Gul14">
+    <img src="Gul.png" id="Gul15">
+    <img src="Gul.png" id="Gul16">
+    <img src="Gul.png" id="Gul17">
+    <img src="Gul.png" id="Gul18">
+    <img src="Gul.png" id="Gul19">
+    <img src="Gul.png" id="Gul20">
+    <img src="Gul.png" id="Gul21">
+    <img src="Gul.png" id="Gul22">
+    <img src="Gul.png" id="Gul23">
+    <img src="Gul.png" id="Gul24">
+    <img src="Gul.png" id="Gul25">
+    <img src="Gul.png" id="Gul26">
+    <img src="Gul.png" id="Gul27">
+    <img src="Gul.png" id="Gul28">
+    <img src="Gul.png" id="Gul29">
+    <img src="Gul.png" id="Gul30">
+    <img src="Gul.png" id="Gul31">
+    <img src="Gul.png" id="Gul32">
+    <img src="Gul.png" id="Gul33">
+    <img src="Gul.png" id="Gul34">
+    <img src="Gul.png" id="Gul35">
+    <img src="Gul.png" id="Gul36">
+    <img src="Gul.png" id="Gul37">
+    <img src="Gul.png" id="Gul38">
+    <img src="Gul.png" id="Gul39">
+    <img src="Gul.png" id="Gul40">
+    <img src="Gul.png" id="Gul41">
+    <img src="Gul.png" id="Gul42">
+
+    <img src="Rød.png" id="Rød1">
+    <img src="Rød.png" id="Rød2">
+    <img src="Rød.png" id="Rød3">
+    <img src="Rød.png" id="Rød4">
+    <img src="Rød.png" id="Rød5">
+    <img src="Rød.png" id="Rød6">
+    <img src="Rød.png" id="Rød7">
+    <img src="Rød.png" id="Rød8">
+    <img src="Rød.png" id="Rød9">
+    <img src="Rød.png" id="Rød10">
+    <img src="Rød.png" id="Rød11">
+    <img src="Rød.png" id="Rød12">
+    <img src="Rød.png" id="Rød13">
+    <img src="Rød.png" id="Rød14">
+    <img src="Rød.png" id="Rød15">
+    <img src="Rød.png" id="Rød16">
+    <img src="Rød.png" id="Rød17">
+    <img src="Rød.png" id="Rød18">
+    <img src="Rød.png" id="Rød19">
+    <img src="Rød.png" id="Rød20">
+    <img src="Rød.png" id="Rød21">
+    <img src="Rød.png" id="Rød22">
+    <img src="Rød.png" id="Rød23">
+    <img src="Rød.png" id="Rød24">
+    <img src="Rød.png" id="Rød25">
+    <img src="Rød.png" id="Rød26">
+    <img src="Rød.png" id="Rød27">
+    <img src="Rød.png" id="Rød28">
+    <img src="Rød.png" id="Rød29">
+    <img src="Rød.png" id="Rød30">
+    <img src="Rød.png" id="Rød31">
+    <img src="Rød.png" id="Rød32">
+    <img src="Rød.png" id="Rød33">
+    <img src="Rød.png" id="Rød34">
+    <img src="Rød.png" id="Rød35">
+    <img src="Rød.png" id="Rød36">
+    <img src="Rød.png" id="Rød37">
+    <img src="Rød.png" id="Rød38">
+    <img src="Rød.png" id="Rød39">
+    <img src="Rød.png" id="Rød40">
+    <img src="Rød.png" id="Rød41">
+    <img src="Rød.png" id="Rød42">
+
+
+</div>
+
+<script>
+
+
+
+
+    let grid1 = document.getElementById("grid1");
+    let grid2 = document.getElementById("grid2");
+    let grid3 = document.getElementById("grid3");
+    let grid4 = document.getElementById("grid4");
+    let grid5 = document.getElementById("grid5");
+    let grid6 = document.getElementById("grid6");
+    let grid7 = document.getElementById("grid7");
+    let grid8 = document.getElementById("grid8");
+    let grid9 = document.getElementById("grid9");
+    let grid10 = document.getElementById("grid10");
+    let grid11 = document.getElementById("grid11");
+    let grid12 = document.getElementById("grid12");
+    let grid13 = document.getElementById("grid13");
+    let grid14 = document.getElementById("grid14");
+    let grid15 = document.getElementById("grid15");
+    let grid16 = document.getElementById("grid16");
+    let grid17 = document.getElementById("grid17");
+    let grid18 = document.getElementById("grid18");
+    let grid19 = document.getElementById("grid19");
+    let grid20 = document.getElementById("grid20");
+    let grid21 = document.getElementById("grid21");
+    let grid22 = document.getElementById("grid22");
+    let grid23 = document.getElementById("grid23");
+    let grid24 = document.getElementById("grid24");
+    let grid25 = document.getElementById("grid25");
+    let grid26 = document.getElementById("grid26");
+    let grid27 = document.getElementById("grid27");
+    let grid28 = document.getElementById("grid28");
+    let grid29 = document.getElementById("grid29");
+    let grid30 = document.getElementById("grid30");
+    let grid31 = document.getElementById("grid31");
+    let grid32 = document.getElementById("grid32");
+    let grid33 = document.getElementById("grid33");
+    let grid34 = document.getElementById("grid34");
+    let grid35 = document.getElementById("grid35");
+    let grid36 = document.getElementById("grid36");
+    let grid37 = document.getElementById("grid37");
+    let grid38 = document.getElementById("grid38");
+    let grid39 = document.getElementById("grid39");
+    let grid40 = document.getElementById("grid40");
+    let grid41 = document.getElementById("grid41");
+    let grid42 = document.getElementById("grid42");
+
+
+    let Rød1 = document.getElementById("Rød1");
+    let Rød2 = document.getElementById("Rød2");
+    let Rød3 = document.getElementById("Rød3");
+    let Rød4 = document.getElementById("Rød4");
+    let Rød5 = document.getElementById("Rød5");
+    let Rød6 = document.getElementById("Rød6");
+    let Rød7 = document.getElementById("Rød7");
+    let Rød8 = document.getElementById("Rød8");
+    let Rød9 = document.getElementById("Rød9");
+    let Rød10 = document.getElementById("Rød10");
+    let Rød11 = document.getElementById("Rød11");
+    let Rød12 = document.getElementById("Rød12");
+    let Rød13 = document.getElementById("Rød13");
+    let Rød14 = document.getElementById("Rød14");
+    let Rød15 = document.getElementById("Rød15");
+    let Rød16 = document.getElementById("Rød16");
+    let Rød17 = document.getElementById("Rød17");
+    let Rød18 = document.getElementById("Rød18");
+    let Rød19 = document.getElementById("Rød19");
+    let Rød20 = document.getElementById("Rød20");
+    let Rød21 = document.getElementById("Rød21");
+    let Rød22 = document.getElementById("Rød22");
+    let Rød23 = document.getElementById("Rød23");
+    let Rød24 = document.getElementById("Rød24");
+    let Rød25 = document.getElementById("Rød25");
+    let Rød26 = document.getElementById("Rød26");
+    let Rød27 = document.getElementById("Rød27");
+    let Rød28 = document.getElementById("Rød28");
+    let Rød29 = document.getElementById("Rød29");
+    let Rød30 = document.getElementById("Rød30");
+    let Rød31 = document.getElementById("Rød31");
+    let Rød32 = document.getElementById("Rød32");
+    let Rød33 = document.getElementById("Rød33");
+    let Rød34 = document.getElementById("Rød34");
+    let Rød35 = document.getElementById("Rød35");
+    let Rød36 = document.getElementById("Rød36");
+    let Rød37 = document.getElementById("Rød37");
+    let Rød38 = document.getElementById("Rød38");
+    let Rød39 = document.getElementById("Rød39");
+    let Rød40 = document.getElementById("Rød40");
+    let Rød41 = document.getElementById("Rød41");
+    let Rød42 = document.getElementById("Rød42");
+
+
+    let Gul1 = document.getElementById("Gul1");
+    let Gul2 = document.getElementById("Gul2");
+    let Gul3 = document.getElementById("Gul3");
+    let Gul4 = document.getElementById("Gul4");
+    let Gul5 = document.getElementById("Gul5");
+    let Gul6 = document.getElementById("Gul6");
+    let Gul7 = document.getElementById("Gul7");
+    let Gul8 = document.getElementById("Gul8");
+    let Gul9 = document.getElementById("Gul9");
+    let Gul10 = document.getElementById("Gul10");
+    let Gul11 = document.getElementById("Gul11");
+    let Gul12 = document.getElementById("Gul12");
+    let Gul13 = document.getElementById("Gul13");
+    let Gul14 = document.getElementById("Gul14");
+    let Gul15 = document.getElementById("Gul15");
+    let Gul16 = document.getElementById("Gul16");
+    let Gul17 = document.getElementById("Gul17");
+    let Gul18 = document.getElementById("Gul18");
+    let Gul19 = document.getElementById("Gul19");
+    let Gul20 = document.getElementById("Gul20");
+    let Gul21 = document.getElementById("Gul21");
+    let Gul22 = document.getElementById("Gul22");
+    let Gul23 = document.getElementById("Gul23");
+    let Gul24 = document.getElementById("Gul24");
+    let Gul25 = document.getElementById("Gul25");
+    let Gul26 = document.getElementById("Gul26");
+    let Gul27 = document.getElementById("Gul27");
+    let Gul28 = document.getElementById("Gul28");
+    let Gul29 = document.getElementById("Gul29");
+    let Gul30 = document.getElementById("Gul30");
+    let Gul31 = document.getElementById("Gul31");
+    let Gul32 = document.getElementById("Gul32");
+    let Gul33 = document.getElementById("Gul33");
+    let Gul34 = document.getElementById("Gul34");
+    let Gul35 = document.getElementById("Gul35");
+    let Gul36 = document.getElementById("Gul36");
+    let Gul37 = document.getElementById("Gul37");
+    let Gul38 = document.getElementById("Gul38");
+    let Gul39 = document.getElementById("Gul39");
+    let Gul40 = document.getElementById("Gul40");
+    let Gul41 = document.getElementById("Gul41");
+    let Gul42 = document.getElementById("Gul42");
+
+
+
+    Rød1.style.display = "none";
+    Rød2.style.display = "none";
+    Rød3.style.display = "none";
+    Rød4.style.display = "none";
+    Rød5.style.display = "none";
+    Rød6.style.display = "none";
+    Rød7.style.display = "none";
+    Rød8.style.display = "none";
+    Rød9.style.display = "none";
+    Rød10.style.display = "none";
+    Rød11.style.display = "none";
+    Rød12.style.display = "none";
+    Rød13.style.display = "none";
+    Rød14.style.display = "none";
+    Rød15.style.display = "none";
+    Rød16.style.display = "none";
+    Rød17.style.display = "none";
+    Rød18.style.display = "none";
+    Rød19.style.display = "none";
+    Rød20.style.display = "none";
+    Rød21.style.display = "none";
+    Rød22.style.display = "none";
+    Rød23.style.display = "none";
+    Rød24.style.display = "none";
+    Rød25.style.display = "none";
+    Rød26.style.display = "none";
+    Rød27.style.display = "none";
+    Rød28.style.display = "none";
+    Rød29.style.display = "none";
+    Rød30.style.display = "none";
+    Rød31.style.display = "none";
+    Rød32.style.display = "none";
+    Rød33.style.display = "none";
+    Rød34.style.display = "none";
+    Rød35.style.display = "none";
+    Rød36.style.display = "none";
+    Rød37.style.display = "none";
+    Rød38.style.display = "none";
+    Rød39.style.display = "none";
+    Rød40.style.display = "none";
+    Rød41.style.display = "none";
+    Rød42.style.display = "none";
+
+    Gul1.style.display = "none";
+    Gul2.style.display = "none";
+    Gul3.style.display = "none";
+    Gul4.style.display = "none";
+    Gul5.style.display = "none";
+    Gul6.style.display = "none";
+    Gul7.style.display = "none";
+    Gul8.style.display = "none";
+    Gul9.style.display = "none";
+    Gul10.style.display = "none";
+    Gul11.style.display = "none";
+    Gul12.style.display = "none";
+    Gul13.style.display = "none";
+    Gul14.style.display = "none";
+    Gul15.style.display = "none";
+    Gul16.style.display = "none";
+    Gul17.style.display = "none";
+    Gul18.style.display = "none";
+    Gul19.style.display = "none";
+    Gul20.style.display = "none";
+    Gul21.style.display = "none";
+    Gul22.style.display = "none";
+    Gul23.style.display = "none";
+    Gul24.style.display = "none";
+    Gul25.style.display = "none";
+    Gul26.style.display = "none";
+    Gul27.style.display = "none";
+    Gul28.style.display = "none";
+    Gul29.style.display = "none";
+    Gul30.style.display = "none";
+    Gul31.style.display = "none";
+    Gul32.style.display = "none";
+    Gul33.style.display = "none";
+    Gul34.style.display = "none";
+    Gul35.style.display = "none";
+    Gul36.style.display = "none";
+    Gul37.style.display = "none";
+    Gul38.style.display = "none";
+    Gul39.style.display = "none";
+    Gul40.style.display = "none";
+    Gul41.style.display = "none";
+    Gul42.style.display = "none";
+
+
+
+    grid1.onclick = klikk;
+    grid1.onclick = klikk;
+    grid1.onclick = klikk;
+    grid1.onclick = klikk;
+    grid1.onclick = klikk;
+    grid1.onclick = klikk;
+    grid1.onclick = klikk;
+    grid1.onclick = klikk;
+    grid2.onclick = klikk;
+    grid3.onclick = klikk;
+    grid4.onclick = klikk;
+    grid5.onclick = klikk;
+    grid6.onclick = klikk;
+    grid7.onclick = klikk;
+    grid8.onclick = klikk;
+    grid9.onclick = klikk;
+    grid10.onclick = klikk;
+    grid11.onclick = klikk;
+    grid12.onclick = klikk;
+    grid13.onclick = klikk;
+    grid14.onclick = klikk;
+    grid15.onclick = klikk;
+    grid16.onclick = klikk;
+    grid17.onclick = klikk;
+    grid18.onclick = klikk;
+    grid19.onclick = klikk;
+    grid20.onclick = klikk;
+    grid21.onclick = klikk;
+    grid22.onclick = klikk;
+    grid23.onclick = klikk;
+    grid24.onclick = klikk;
+    grid25.onclick = klikk;
+    grid26.onclick = klikk;
+    grid27.onclick = klikk;
+    grid28.onclick = klikk;
+    grid29.onclick = klikk;
+    grid30.onclick = klikk;
+    grid31.onclick = klikk;
+    grid32.onclick = klikk;
+    grid33.onclick = klikk;
+    grid34.onclick = klikk;
+    grid35.onclick = klikk;
+    grid36.onclick = klikk;
+    grid37.onclick = klikk;
+    grid38.onclick = klikk;
+    grid39.onclick = klikk;
+    grid40.onclick = klikk;
+    grid41.onclick = klikk;
+    grid42.onclick = klikk;
+
+    var i = 1;
+
+    function klikk(event){
+        i = i + 1;
+        console.log("klikk");
+        console.log(event);
+        if(event.target === grid1){
+            console.log(i);
+            if(i %2!=0){
+                Gul1.style.display = "block";
+                return;
+            }
+            else{
+                Rød1.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid2){
+            console.log(i);
+            if(i %2!=0){
+                Gul2.style.display = "block";
+                return;
+            }
+            else{
+                Rød2.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid3){
+            console.log(i);
+            if(i %2!=0){
+                Gul3.style.display = "block";
+                return;
+            }
+            else{
+                Rød3.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid4){
+            console.log(i);
+            if(i %2!=0){
+                Gul4.style.display = "block";
+                return;
+            }
+            else{
+                Rød4.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid5){
+            console.log(i);
+            if(i %2!=0){
+                Gul5.style.display = "block";
+                return;
+            }
+            else{
+                Rød5.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid6){
+            console.log(i);
+            if(i %2!=0){
+                Gul6.style.display = "block";
+                return;
+            }
+            else{
+                Rød6.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid7){
+            console.log(i);
+            if(i %2!=0){
+                Gul7.style.display = "block";
+                return;
+            }
+            else{
+                Rød7.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid8){
+            console.log(i);
+            if(i %2!=0){
+                Gul8.style.display = "block";
+                return;
+            }
+            else{
+                Rød8.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid9){
+            console.log(i);
+            if(i %2!=0){
+                Gul9.style.display = "block";
+                return;
+            }
+            else{
+                Rød9.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid10){
+            console.log(i);
+            if(i %2!=0){
+                Gul10.style.display = "block";
+                return;
+            }
+            else{
+                Rød10.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid11){
+            console.log(i);
+            if(i %2!=0){
+                Gul11.style.display = "block";
+                return;
+            }
+            else{
+                Rød11.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid12){
+            console.log(i);
+            if(i %2!=0){
+                Gul12.style.display = "block";
+                return;
+            }
+            else{
+                Rød12.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid13){
+            console.log(i);
+            if(i %2!=0){
+                Gul13.style.display = "block";
+                return;
+            }
+            else{
+                Rød13.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid14){
+            console.log(i);
+            if(i %2!=0){
+                Gul14.style.display = "block";
+                return;
+            }
+            else{
+                Rød14.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid15){
+            console.log(i);
+            if(i %2!=0){
+                Gul15.style.display = "block";
+                return;
+            }
+            else{
+                Rød15.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid16){
+            console.log(i);
+            if(i %2!=0){
+                Gul16.style.display = "block";
+                return;
+            }
+            else{
+                Rød16.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid17){
+            console.log(i);
+            if(i %2!=0){
+                Gul17.style.display = "block";
+                return;
+            }
+            else{
+                Rød17.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid18){
+            console.log(i);
+            if(i %2!=0){
+                Gul18.style.display = "block";
+                return;
+            }
+            else{
+                Rød18.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid19){
+            console.log(i);
+            if(i %2!=0){
+                Gul19.style.display = "block";
+                return;
+            }
+            else{
+                Rød19.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid20){
+            console.log(i);
+            if(i %2!=0){
+                Gul20.style.display = "block";
+                return;
+            }
+            else{
+                Rød20.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid21){
+            console.log(i);
+            if(i %2!=0){
+                Gul21.style.display = "block";
+                return;
+            }
+            else{
+                Rød21.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid22){
+            console.log(i);
+            if(i %2!=0){
+                Gul22.style.display = "block";
+                return;
+            }
+            else{
+                Rød22.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid23){
+            console.log(i);
+            if(i %2!=0){
+                Gul23.style.display = "block";
+                return;
+            }
+            else{
+                Rød23.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid24){
+            console.log(i);
+            if(i %2!=0){
+                Gul24.style.display = "block";
+                return;
+            }
+            else{
+                Rød24.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid25){
+            console.log(i);
+            if(i %2!=0){
+                Gul25.style.display = "block";
+                return;
+            }
+            else{
+                Rød25.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid26){
+            console.log(i);
+            if(i %2!=0){
+                Gul26.style.display = "block";
+                return;
+            }
+            else{
+                Rød26.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid27){
+            console.log(i);
+            if(i %2!=0){
+                Gul27.style.display = "block";
+                return;
+            }
+            else{
+                Rød27.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid28){
+            console.log(i);
+            if(i %2!=0){
+                Gul28.style.display = "block";
+                return;
+            }
+            else{
+                Rød28.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid29){
+            console.log(i);
+            if(i %2!=0){
+                Gul29.style.display = "block";
+                return;
+            }
+            else{
+                Rød29.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid30){
+            console.log(i);
+            if(i %2!=0){
+                Gul30.style.display = "block";
+                return;
+            }
+            else{
+                Rød30.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid31){
+            console.log(i);
+            if(i %2!=0){
+                Gul31.style.display = "block";
+                return;
+            }
+            else{
+                Rød31.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid32){
+            console.log(i);
+            if(i %2!=0){
+                Gul32.style.display = "block";
+                return;
+            }
+            else{
+                Rød32.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid33){
+            console.log(i);
+            if(i %2!=0){
+                Gul33.style.display = "block";
+                return;
+            }
+            else{
+                Rød33.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid34){
+            console.log(i);
+            if(i %2!=0){
+                Gul34.style.display = "block";
+                return;
+            }
+            else{
+                Rød34.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid35){
+            console.log(i);
+            if(i %2!=0){
+                Gul35.style.display = "block";
+                return;
+            }
+            else{
+                Rød35.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid36){
+            console.log(i);
+            if(i %2!=0){
+                Gul36.style.display = "block";
+                return;
+            }
+            else{
+                Rød36.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid37){
+            console.log(i);
+            if(i %2!=0){
+                Gul37.style.display = "block";
+                return;
+            }
+            else{
+                Rød37.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid38){
+            console.log(i);
+            if(i %2!=0){
+                Gul38.style.display = "block";
+                return;
+            }
+            else{
+                Rød38.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid39){
+            console.log(i);
+            if(i %2!=0){
+                Gul39.style.display = "block";
+                return;
+            }
+            else{
+                Rød39.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid40){
+            console.log(i);
+            if(i %2!=0){
+                Gul40.style.display = "block";
+                return;
+            }
+            else{
+                Rød40.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid41){
+            console.log(i);
+            if(i %2!=0){
+                Gul41.style.display = "block";
+                return;
+            }
+            else{
+                Rød41.style.display = "block";
+                return;
+            }
+        }
+
+        else if(event.target === grid42){
+            console.log(i);
+            if(i %2!=0){
+                Gul42.style.display = "block";
+                return;
+            }
+            else{
+                Rød42.style.display = "block";
+                return;
+            }
+        }
+    };
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
