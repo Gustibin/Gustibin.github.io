@@ -101,6 +101,15 @@ body{
     font-size: 200%;
 }
 
+#nedTelling{
+    position: absolute;
+    border: 10px solid #a6c1f5;
+    background-color: antiquewhite;
+    padding: 10px;
+    font-size: 200%;
+    left: 10%;
+}
+
 #bilde{
     position: absolute;
     border: 10px solid #a6c1f5;
@@ -125,4 +134,18 @@ body{
     width: 200px;
     right: 0px;
     top: 235px;
+}
+
+#rødt{
+    background-color: red;
+    position: absolute;
+    width: 1980px;
+    height: 1080px;
+    text-align: center;
+
+}
+#rødOverskrift{
+    position: absolute;
+    left: 30%;
+    top: 30%;
 }

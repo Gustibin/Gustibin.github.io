@@ -8,7 +8,13 @@
 </head>
 <body>
 
+<div id="rødt">
+    <h1 id="rødOverskrift">Din tid er ute</h1>
+</div>
+
 <div id="poeng"></div>
+
+<div id="nedTelling"></div>
 
 <img src="tenke.jpg" id="bilde">
 
@@ -59,6 +65,8 @@
     const bilde = document.getElementById("bilde");
     const altRiktig = document.getElementById("altRiktig");
     const bonusBtn = document.getElementById("bonusBtn");
+    const nedTelling = document.getElementById("nedTelling");
+    const rødt = document.getElementById("rødt");
 
 
     let spørsmål1 = ["Hva er 5x2?", "16", "12", "8", "10"];
@@ -69,14 +77,34 @@
 
 
         bonusBtn.style.display = "none";
+        rødt.style.display = "none";
 
         var i = 1;
         var y = 0;
+        var h = 120;
         var spørsmål1Verdi = 0;
         var spørsmål2Verdi = 0;
         var spørsmål3Verdi = 0;
         var spørsmål4Verdi = 0;
 
+
+    for(let b = 0; b < 121; b++){
+        setTimeout(function () {
+            nedTelling.innerHTML = h;
+            h = h - 1;
+            if(h === -1){
+                console.log("funker");
+                rødt.style.display = "block";
+                wrong.play();
+            }
+        }, 1000 * b);
+    }
+
+    /* prøvde å bruke while men hele nettsiden frøs.
+    while(h > 0){
+        console.log("h!");
+    }
+    */
 
 
 

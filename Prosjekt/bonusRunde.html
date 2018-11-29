@@ -95,7 +95,9 @@
         if(counter < 10){
             setTimeout(function(){
                 counter++;
-                terningImg.src = terningArray[Math.floor(Math.random() * 7)];
+                let tilfeldigTall = Math.floor(Math.random() * 7);
+                terningImg.src = terningArray[tilfeldigTall];
+                console.log(tilfeldigTall);
                 terningRull.play();
                 console.log(counter);
                 start(counter);
