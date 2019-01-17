@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FerieBilder</title>
+
+    <style>
+
+        img{
+            width: 400px;
+        }
+    </style>
+
+</head>
+<body>
+
+<ul id="liste">
+
+</ul>
+
+<img src="" id="bilde">
+
+
+<button id="btn1">Tilbake</button>
+<button id="btn2">Frem</button>
+
+
+
+
+<script>
+
+    let liste = document.querySelector("#liste");
+    let bilde = document.querySelector("#bilde");
+    let btn1 = document.querySelector("#btn1");
+    let btn2 = document.querySelector("#btn2");
+
+    let i = 1;
+
+
+    let bildeListe = ["Asia", "Nord", "Syden"];
+
+    for(let bilde of bildeListe){
+        liste.innerHTML += "<li>" + bilde + "</li>";
+    }
+
+    bilde.src = "Bilder/" + bildeListe[i] + ".jpg";
+
+    btn1.onclick = function(){
+        bilde.src = "Bilder/" + bildeListe[i] + ".jpg";
+        console.log(i);
+
+        if(i === 0){
+            i = i + 3;
+        }
+        i = i - 1;
+    }
+
+    btn2.onclick = function(){
+        bilde.src = "Bilder/" + bildeListe[i] + ".jpg";
+        console.log(i);
+
+        if(i === 2){
+            i = i - 3;
+        }
+        i++;
+    }
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
