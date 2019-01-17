@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bokliste</title>
+</head>
+<body>
+
+
+<ul id="liste">
+
+</ul>
+
+<script>
+
+    let liste = document.querySelector("#liste");
+
+    let bokliste = ["Harry potter", "Drakeguten", "HardyGuttene", "Percy Jackson", "kasper skårer mål"];
+
+    bokliste.sort(sortereBokstaver);
+
+    function sortereBokstaver(tekst1, tekst2){
+        tekst1 = tekst1.toLowerCase();
+        tekst2 = tekst2.toLowerCase();
+        if(tekst1 == tekst2){
+            return 0;
+        }
+        else if(tekst1>tekst2){
+            return 1;
+        }
+        else{
+            return -1
+        }
+    }
+
+
+
+
+
+    let i = 0;
+
+    for(let bok of bokliste){
+        i++;
+        liste.innerHTML += "<li>" + i + ": " + bok + "<br>" + "</li>";
+    }
+
+
+
+
+</script>
+
+</body>
+</html>

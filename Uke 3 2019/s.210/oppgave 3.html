@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Temperatur</title>
+</head>
+<body>
+
+
+<script>
+
+
+    let i = 0;
+    let mengde = 0;
+    let totalsum = 0;
+    let temperaturListe = [3, 4, 5, 6, 5, 5, 6, 4, 4, 5];
+
+    for(let temperatur of temperaturListe){
+        if(temperatur < 5){
+            i++;
+        }
+        mengde++;
+        totalsum += temperatur;
+    }
+
+    console.log(i);
+
+    temperaturListe.sort(sortere);
+
+    function sortere(a, b){
+        return b-a;
+    }
+
+    console.log(temperaturListe);
+    console.log(totalsum/mengde);
+
+
+
+</script>
+
+</body>
+</html>
