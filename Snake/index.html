@@ -9,6 +9,15 @@
         canvas{
             border: solid;
         }
+
+        .eple {
+            background: blue;
+            width: 20px;
+            height: 20px;
+            margin: 5px auto;
+            position: absolute;
+            border-radius: 50%;
+        }
     </style>
 
 </head>
@@ -19,110 +28,28 @@
 
 <script>
 
-    const spillCanvas = document.querySelector("#spillCanvas");
-    const ctx = spillCanvas.getContext("2d");
+
+    var e = 0;
+    var epler = [];
+
+
+    lagEple();
+
+    function lagEple(){
+        var eple = document.createElement('div');
+        eple.className = 'eple';
+        eple.id = "eple" + e;
+        document.body.appendChild(eple);
+        epler.push(eple);
 
 
 
-    ctx.fillStyle = "red";
-    /*
-    ctx.fillRect(10,10,20,40);
-    */
+        e = Math.floor(Math.random() * 26);
 
-    //Globale variabler
-    let firkant = {
-        bredde: 20,
-        hoyde: 20,
-        farge: "blue",
-        xpos: 10,
-        ypos: 20,
-        xfart: 4,
-        yfart: 4,
-        xretning: 5,
-        yretning: 0
-    };
-
-    let firkant2 = {
-        bredde: 20,
-        hoyde: 30,
-        farge: "blue",
-        xpos: 200,
-        ypos: 20,
-        xfart: 10,
-        yfart: 4,
-        xretning: 1,
-        yretning: 1
-    };
-
-    //Setup
-    spillCanvas.width = 500;
-    spillCanvas.height = 500;
-
-
-    var timer = setInterval(gameLoop, 1000);
-    var i = 0;
-
-
-    // Funksjonsdefinisjoner
-
-    function gameLoop(){
-
-        clearCanvas();
-        sjekkKollisjon(firkant);
-        tegnFirkant(firkant);
-        flyttFirkant(firkant);
-    }
-
-    function tegnFirkant(figur){
-
-        ctx.fillStyle = figur.farge;
-        ctx.fillRect(figur.xpos,figur.ypos, figur.bredde, figur.hoyde);
-    }
-
-    function flyttFirkant(figur){
-        figur.xpos = figur.xpos + (figur.xretning*figur.xfart);
-        figur.ypos = figur.ypos + (figur.yretning*figur.yfart);
-    }
-
-   /* function clearCanvas(){
-        ctx.fillStyle = "white";
-        ctx.fillRect(0,0, spillCanvas.width, spillCanvas.height);
-    }
-*/
-    /* function fjernFirkant(figur){
-         ctx.clearRect
-     }
-     */
-
-    function sjekkKollisjon(figur){
-        if(figur.xpos >= spillCanvas.width - figur.bredde || figur.xpos < 0){
-            location.reload();
-        }
-        if(figur.ypos >= (spillCanvas.height - figur.hoyde)|| figur.ypos < 0){
-            location.reload();
-        }
+        eple.style.left = ((e * 20) + 382) + "px";
+        eple.style.top = ((e * 20) + 97) + "px";
 
     }
-
-
-    function checkKey(e) {
-
-        e = e || window.event;
-
-        if (e.keyCode == '38') {
-            // up arrow
-        }
-        else if (e.keyCode == '40') {
-            // down arrow
-        }
-        else if (e.keyCode == '37') {
-            // left arrow
-        }
-        else if (e.keyCode == '39') {
-            // right arrow
-        }
-    }
-
 
 </script>
 

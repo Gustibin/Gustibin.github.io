@@ -6,38 +6,133 @@
     <title>index2</title>
 
     <style>
+
+        body{
+            background-image: url("bilder/ørken.jpg");
+
+            background-size: auto;
+        }
+
         .square {
             background: red;
             width: 20px;
             height: 20px;
             margin: 5px auto;
-            left: 20px;
             position: absolute;
         }
 
+        .eple {
+            background: blue;
+            width: 20px;
+            height: 20px;
+            margin: 5px auto;
+            position: absolute;
+            border-radius: 50%;
+        }
+
         #ramme{
-            border: solid;
+            border: solid 2px;
+            left: 400px;
+            top: 100px;
             width: 500px;
             height: 500px;
             position: absolute;
         }
 
+        #poengSum{
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+        }
+        #overSkrift{
+            position: absolute;
+            left: 48%;
+            top: 24px;
+        }
+
+        #startBtn{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            left: 600px;
+            top: 300px;
+        }
+
+        #gress{
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            top: 102px;
+            left: 402px;
+        }
+
+
     </style>
+    <img id="gress" src="bilder/gress.jpg">
+
+    <h1 id="poengSum">0</h1>
+    <h1 id="overSkrift">Snake</h1>
+
 
     <div id="ramme"></div>
+
+    <button id="startBtn">Start</button>
+
+    <audio id="dødLyd" src="Lyd/død.mp3"></audio>
+    <audio id="spiseLyd" src="Lyd/nom.mp3"></audio>
+    <audio id="musikk" src="Lyd/musikk.mp3"></audio>
+
+
 
 </head>
 <body>
 
 <script>
-    var timer = setInterval(lagFirkant, 500);
+
+    let startBtn = document.querySelector("#startBtn");
+    let dødLyd = document.querySelector("#dødLyd");
+    let spiseLyd = document.querySelector("#spiseLyd");
+    let musikk = document.querySelector("#musikk");
+
     var i = 0;
-    var y = 0;
+    var y = 3;
+    var e = 0;
+    var h = 4;
     let squares = [];
-    let topPos = 7;
-    let leftPos = 10;
+    let epler = [];
+    let leftArray = [];
+    let topArray = [];
+    let topPos = 97;
+    let leftPos = 382;
+    let epleTop = 0;
+    let epleLeft = 0;
+    let epleNummer = 0;
+
+    lagEple();
+
+    startBtn.onclick = function(){
+        setInterval(lagFirkant, 150);
+        startBtn.style.display = "none";
+        musikk.play();
+    };
 
 
+    function dødFunction(){
+        dødLyd.play();
+
+        squares[i-3].parentElement.removeChild(squares[i-(5 + epleNummer)]);
+
+        for(let b = 0; b < 5; b++){
+            setTimeout(function () {
+                h = h - 1;
+                if(h === -1){
+                    console.log("funker");
+                    location.reload();
+                }
+            }, 1000 * b);
+        }
+
+    }
 
     function lagFirkant(){
         var square = document.createElement('div');
@@ -49,7 +144,6 @@
 
         if(y === 3) {
             leftPos += 20;
-            console.log(squares[i]);
             //console.log(squares);
         }
         else if(y === 1){
@@ -62,17 +156,60 @@
             topPos += 20;
         }
 
+
+        if(topPos > 577 || topPos < 97 || leftPos > 892 || leftPos < 402){
+            dødFunction();
+        }
+
         square.style.left = leftPos + "px";
         square.style.top = topPos + "px";
-        console.log(topPos);
-        console.log(leftPos);
+
+
+        for(let l = 0; l < epleNummer + 5; l++){
+            if(topPos + 5 === topArray[l] && leftPos === leftArray[l]){
+                dødFunction();
+            }
+        }
+
+
+
+        leftArray.push(square.offsetLeft);
+        topArray.push(square.offsetTop);
         i++;
 
 
-
-        if(i > 4){
-            squares[i-3].parentElement.removeChild(squares[i-5]);
+        if(topPos + 5 === epleTop && leftPos === epleLeft){
+            epler[epleNummer].parentElement.removeChild(epler[epleNummer]);
+            epleNummer++;
+            spiseLyd.play();
+            lagEple();
+            document.getElementById("poengSum").innerHTML = epleNummer;
         }
+        else if(i > 4){
+            squares[i-3].parentElement.removeChild(squares[i-(5 + epleNummer)]);
+            topArray.shift();
+            leftArray.shift();
+        }
+
+    }
+
+
+    function lagEple(){
+        var eple = document.createElement('div');
+        eple.className = 'eple';
+        eple.id = "eple";
+        document.body.appendChild(eple);
+        epler.push(eple);
+
+
+        e = Math.floor(Math.random() * 24 + 1);
+
+        eple.style.left = ((e * 20) + 382) + "px";
+        eple.style.top = ((e * 20) + 97) + "px";
+
+        epleTop = epler[epleNummer].offsetTop;
+        epleLeft = epler[epleNummer].offsetLeft;
+
     }
 
 
@@ -108,6 +245,9 @@
                 break;
         }
     };
+
+
+
 
 </script>
 
