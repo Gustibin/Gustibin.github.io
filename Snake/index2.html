@@ -4,74 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>index2</title>
+    <link rel="stylesheet" href="snakeStyle.css">
 
-    <style>
-
-        body{
-            background-image: url("bilder/ørken.jpg");
-
-            background-size: auto;
-        }
-
-        .square {
-            background: red;
-            width: 20px;
-            height: 20px;
-            margin: 5px auto;
-            position: absolute;
-        }
-
-        .eple {
-            background: blue;
-            width: 20px;
-            height: 20px;
-            margin: 5px auto;
-            position: absolute;
-            border-radius: 50%;
-        }
-
-        #ramme{
-            border: solid 2px;
-            left: 400px;
-            top: 100px;
-            width: 500px;
-            height: 500px;
-            position: absolute;
-        }
-
-        #poengSum{
-            position: absolute;
-            bottom: 50px;
-            left: 50%;
-        }
-        #overSkrift{
-            position: absolute;
-            left: 48%;
-            top: 24px;
-        }
-
-        #startBtn{
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            left: 600px;
-            top: 300px;
-        }
-
-        #gress{
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            top: 102px;
-            left: 402px;
-        }
-
-
-    </style>
+        <h1 id="overSkrift"><font color="#FD0808">S</font><span class="smaller"><font color="#D40831">N</font><font color="#AB085A">A</font><font color="#820883">K</font><font color="#3108D4">E</font></span>
+        </h1>
     <img id="gress" src="bilder/gress.jpg">
 
     <h1 id="poengSum">0</h1>
-    <h1 id="overSkrift">Snake</h1>
+    <h1 id="maxPoeng">HighScore</h1>
+
 
 
     <div id="ramme"></div>
@@ -87,17 +28,35 @@
 </head>
 <body>
 
+
+
+<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyBnApvqztNLg8l3oFLAC-D7DSNrTBLQJKk",
+        authDomain: "todolist-9382f.firebaseapp.com",
+        databaseURL: "https://todolist-9382f.firebaseio.com",
+        projectId: "todolist-9382f",
+        storageBucket: "todolist-9382f.appspot.com",
+        messagingSenderId: "640676229732"
+    };
+    firebase.initializeApp(config);
+</script>
+
 <script>
 
     let startBtn = document.querySelector("#startBtn");
     let dødLyd = document.querySelector("#dødLyd");
     let spiseLyd = document.querySelector("#spiseLyd");
     let musikk = document.querySelector("#musikk");
+    let opacityAnimation = document.querySelector("#opacityAnimation");
+    let maxPoeng = document.querySelector("#maxPoeng");
 
     var i = 0;
     var y = 3;
     var e = 0;
-    var h = 4;
+    var h = 3;
     let squares = [];
     let epler = [];
     let leftArray = [];
@@ -107,34 +66,65 @@
     let epleTop = 0;
     let epleLeft = 0;
     let epleNummer = 0;
+    let highArray = [];
+    let largest = 0;
 
-    lagEple();
 
+    //Referer til firebase
+    const db = firebase.database();
+    const highScore = db.ref("highScore");
+
+    highScore.on("child_added", skrivPoeng);
+
+    // Får verdi fra firebase
+    function skrivPoeng(snapshot){
+        highArray.push(snapshot.val())
+    }
+
+
+
+
+
+
+
+
+
+    //Starter spillet,
     startBtn.onclick = function(){
-        setInterval(lagFirkant, 150);
-        startBtn.style.display = "none";
-        musikk.play();
+        timer = setInterval(lagFirkant, 75); //setter igang lagFirkant(En loop som går en gang per 0.075 sekund)
+        startBtn.style.display = "none"; // Gjør så man ikke ser knappen lenger
+        musikk.play(); // setter igang musikken
+        largest = Math.max.apply(Math, highArray);// finner ut hvilket tall som er størst i "higharray" og gir verdien til "largest"
+        maxPoeng.innerHTML = largest;//Får maxPoeng til å vise verdien til "largest
+        lagEple();//Lager et eple
     };
 
 
+    // Tingene som skal skje når man dør
     function dødFunction(){
-        dødLyd.play();
+        dødLyd.play(); // dødlyd spiller
+        musikk.pause(); // musikk skal settes på pause
+        clearInterval(timer); //Får gameloopen til å slutte "lagFirkant"
 
-        squares[i-3].parentElement.removeChild(squares[i-(5 + epleNummer)]);
+        highScore.push(epleNummer); //Pusher verdien "epleNummer" til firebase, dette er highscoren
 
+
+        // en timer som realoder siden etter to sekunder
         for(let b = 0; b < 5; b++){
             setTimeout(function () {
-                h = h - 1;
                 if(h === -1){
                     console.log("funker");
                     location.reload();
                 }
-            }, 1000 * b);
+                h = h - 1;
+            }, 2000);
         }
 
     }
 
+    // Gameloopen min
     function lagFirkant(){
+        // Lager en firkant, gir den id, class og pusher den inn i arrayen "squares"
         var square = document.createElement('div');
         square.className = 'square';
         square.id = "square" + i;
@@ -142,6 +132,7 @@
         squares.push(square);
 
 
+        // Ser hvilken pil du har klikket på sist for å legge til 20 til riktig variabel
         if(y === 3) {
             leftPos += 20;
             //console.log(squares);
@@ -157,14 +148,17 @@
         }
 
 
+        // Hvis neste firkant er utenfor rammen skal dødFunction starte
         if(topPos > 577 || topPos < 97 || leftPos > 892 || leftPos < 402){
             dødFunction();
         }
 
+        // bruker to variabler for å bestemme hvor firkanten skal legges.
         square.style.left = leftPos + "px";
         square.style.top = topPos + "px";
 
 
+        // Går gjennom alle tallene i arrayene for å se om firkanten blir produsert på en av de som allerede finnes
         for(let l = 0; l < epleNummer + 5; l++){
             if(topPos + 5 === topArray[l] && leftPos === leftArray[l]){
                 dødFunction();
@@ -172,47 +166,52 @@
         }
 
 
-
+        // legger positisjonen til firkanten inn i en array så den kan brukes senere til å bestemme om du kræsjer med egene firkanter
         leftArray.push(square.offsetLeft);
         topArray.push(square.offsetTop);
         i++;
 
 
-        if(topPos + 5 === epleTop && leftPos === epleLeft){
-            epler[epleNummer].parentElement.removeChild(epler[epleNummer]);
-            epleNummer++;
-            spiseLyd.play();
-            lagEple();
-            document.getElementById("poengSum").innerHTML = epleNummer;
+        if(topPos + 5 === epleTop && leftPos === epleLeft){ // hvis din neste firkant blir laget oppå et eple skal dette skje
+            epler[epleNummer].parentElement.removeChild(epler[epleNummer]); // eplet slettes fra spillet
+            epleNummer++; // eplenummer variablene øker
+            spiseLyd.play(); // spiselyd spilles
+            lagEple(); // starter funksjonen lagEple
+            document.getElementById("poengSum").innerHTML = epleNummer; // oppdaterer poengsummen
         }
         else if(i > 4){
+            // Tar å sletter den femt bakerste firkanten + antall mengde epler tatt. etter fire firkanter er blitt laget.
             squares[i-3].parentElement.removeChild(squares[i-(5 + epleNummer)]);
+            // Sletter det eldste tallet i top og left Array
             topArray.shift();
             leftArray.shift();
         }
 
     }
 
-
+    // Lager et eple
     function lagEple(){
+        // Lager, gir id, gir className, og pusher inn i epler arrayen
         var eple = document.createElement('div');
         eple.className = 'eple';
         eple.id = "eple";
         document.body.appendChild(eple);
         epler.push(eple);
 
-
+        // gjør så eplet er tilfeldig på siden men blant en av rutene slangen kan nå
         e = Math.floor(Math.random() * 24 + 1);
 
+        // bruker random tallet til å bestemme left og top.
         eple.style.left = ((e * 20) + 382) + "px";
         eple.style.top = ((e * 20) + 97) + "px";
 
+        // Får inn lengden fra top og left inn i array så man kan se når firkanten er oppå.
         epleTop = epler[epleNummer].offsetTop;
         epleLeft = epler[epleNummer].offsetLeft;
 
     }
 
-
+    // registrerer når du klikker på knapp i tillegg til hvilken knapp du klikker på, oppdaterer y så jeg kan bruke informasjonen i andre deler av koden.
     document.onkeydown = function(e) {
         switch (e.keyCode) {
             case 37:

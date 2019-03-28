@@ -1,0 +1,83 @@
+body{
+    background-image: url("bilder/ørken.jpg");
+
+    background-size: auto;
+}
+
+.square {
+    background: red;
+    width: 20px;
+    height: 20px;
+    margin: 5px auto;
+    position: absolute;
+}
+
+.eple {
+    background: blue;
+    width: 20px;
+    height: 20px;
+    margin: 5px auto;
+    position: absolute;
+    border-radius: 50%;
+}
+
+#ramme{
+    border: solid 2px;
+    left: 400px;
+    top: 100px;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+}
+
+#poengSum{
+    position: absolute;
+    bottom: 50px;
+    left: 60%;
+}
+
+#maxPoeng{
+    position: absolute;
+    bottom: 50px;
+    left: 35%;
+}
+
+#overSkrift{
+    position: absolute;
+    left: 47%;
+    top: 24px;
+}
+
+#startBtn{
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 600px;
+    top: 300px;
+    background-color: sandybrown; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#gress{
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 102px;
+    left: 402px;
+}
+
+div {
+    width: 998px;	margin-right: auto;
+    margin-left: auto;
+    border: 1px solid #424242;
+    margin-bottom: 10px;
+
+}
+
+
