@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oppg1</title>
+    <style>
+
+        #bildene{
+            width: 440px;
+            position: absolute;
+            top: 300px;
+            left: 500px;
+        }
+        #skinke{
+            position: absolute;
+            left: 300px;
+            top: 0px;
+        }
+        #botte{
+            position:absolute;
+            top: 150px;
+        }
+        img{
+            width: 120px;
+        }
+
+        #vektInp{
+            position: absolute;
+            left: 600px;
+            top: 200px;
+        }
+        h1{
+            position: absolute;
+            left: 550px;
+        }
+        h2{
+            position: absolute;
+            left: 550px;
+            top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Gjett vekten på skinka!</h1>
+<h2 id="h2"></h2>
+<div id="bildene">
+    <img src="vedlegg/sinkboette.jpg" id="botte">
+    <img src="vedlegg/skinke.jpg" id="skinke">
+</div>
+
+<input type="number" id="vektInp" placeholder="skriv antall liter her">
+
+
+<script>
+
+    let vektInp = document.querySelector("#vektInp");
+    let botte = document.querySelector("#botte");
+    let skinke = document.querySelector("#skinke");
+    let h2 = document.querySelector("#h2");
+
+    vektInp.oninput = function (){
+        if(vektInp.value >= 3 && vektInp.value < 5){
+            botte.style.top = "125px";
+            skinke.style.top = "25px";
+            h2.innerHTML = "På god vei:)"
+        }
+        else if (vektInp.value >= 5 && vektInp.value <= 7){
+            botte.style.top = "100px";
+            skinke.style.top = "50px";
+            h2.innerHTML = "På god vei:)"
+        }
+        else if (vektInp.value >= 9 && vektInp.value < 11){
+            botte.style.top = "50px";
+            skinke.style.top = "100px";
+            h2.innerHTML = "På god vei:)"
+        }
+        else if (vektInp.value >= 11 && vektInp.value < 14){
+            botte.style.top = "25px";
+            skinke.style.top = "125px";
+            h2.innerHTML = "På god vei:)"
+        }
+        else if (vektInp.value == 8){
+            botte.style.top = "75px";
+            skinke.style.top = "75px";
+            h2.innerHTML = "Riktig!"
+        }
+        else{
+            h2.innerHTML = "Helt feil.."
+        }
+    }
+
+
+</script>
+
+
+
+
+</body>
+</html>

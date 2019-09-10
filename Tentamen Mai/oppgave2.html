@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oppg2</title>
+
+    <style>
+
+        #øvelse1{
+            position: absolute;
+            left: 50px;
+            top: 300px;
+        }
+        #øvelse2{
+            position: absolute;
+            left: 450px;
+            top: 300px;
+        }
+        #øvelse3{
+            position: absolute;
+            left: 850px;
+            top: 300px;
+        }
+        h1{
+            position: absolute;
+            left: 400px;
+            top: 100px;
+        }
+
+        #btn{
+            position: absolute;
+            left: 400px;
+            top: 500px;
+        }
+        #liste1{
+            position: absolute;
+            left: 750px;
+            top: 150px;
+        }
+        #liste2{
+            position: absolute;
+            left: 950px;
+            top: 150px;
+        }
+        #liste3{
+            position: absolute;
+            left: 1150px;
+            top: 150px;
+        }
+
+        #liste4{
+            position: absolute;
+            left: 850px;
+            top: 450px;
+        }
+        h3{
+            position: absolute;
+            left: 300px;
+            top: 200px;
+        }
+        #finale{
+            position: absolute;
+            left: 400px;
+            top: 400px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Konkuranse</h1>
+<h3>Klikk på konkurerende fra første til sisteplass</h3>
+
+
+
+<div id="øvelse1">
+    <h2>øvelse 1</h2>
+    <button>Lars</button>
+    <button>Kari</button>
+    <button>Lisa</button>
+    <button>Erlend</button>
+    <button>Anja</button>
+    <button>Adam</button>
+</div>
+
+<div id="øvelse2">
+    <h2>øvelse 2</h2>
+    <button>Silje</button>
+    <button>Shiva</button>
+    <button>Petter</button>
+    <button>Anna</button>
+    <button>Herman</button>
+    <button>Emilia</button>
+</div>
+
+<div id="øvelse3">
+    <h2>øvelse 3</h2>
+    <button>Cornelius</button>
+    <button>Torkel</button>
+    <button>Martha</button>
+    <button>Mari</button>
+    <button>Matias</button>
+    <button>Tuva</button>
+</div>
+
+<div id="finale">
+    <h2 id="finalistene"></h2>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+    <button></button>
+</div>
+
+<button id="btn">Klikk her når alt er fyllt inn</button>
+<div id="liste1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</div>
+
+<div id="liste2">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</div>
+
+<div id="liste3">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</div>
+
+<div id="liste4">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</div>
+
+
+<script>
+    let inputFelt = document.querySelectorAll("input");
+    let btn = document.querySelector("#btn");
+    let liste4 = document.querySelector("#liste4");
+    let finale = document.querySelector("#finale");
+    let finalistene = document.querySelector("#finalistene");
+    let li = document.querySelectorAll("li");
+    let button = document.querySelectorAll("button");
+    let div = document.querySelectorAll("div");
+
+    let poeng = 0;
+    let navn1Array = [];
+    let poeng1Array = [];
+    let navn2Array = [];
+    let poeng2Array = [];
+    let navn3Array = [];
+    let poeng3Array = [];
+    let largest = 0;
+    let i = 0;
+    let y = 0;
+    let e = 0;
+    let h = 0;
+    let n = 0;
+
+    liste4.style.display = "none";
+    finale.style.display = "none";
+
+    button[0].onclick = function() {
+        e = "Lars";
+        main();
+    };
+    button[1].onclick = function() {
+        e = "Kari";
+        main();
+    };
+    button[2].onclick = function() {
+        e = "Lisa";
+        main();
+    };
+    button[3].onclick = function() {
+        e = "Erlend";
+        main();
+    };
+    button[4].onclick = function() {
+        e = "Anja";
+        main();
+    };
+    button[5].onclick = function() {
+        e = "Adam";
+        main();
+    };
+
+    button[6].onclick = function() {
+        e = "Silje";
+        main();
+    };
+    button[7].onclick = function() {
+        e = "Shiva";
+        main();
+    };
+    button[8].onclick = function() {
+        e = "Petter";
+        main();
+    };
+    button[9].onclick = function() {
+        e = "Anna";
+        main();
+    };
+    button[10].onclick = function() {
+        e = "Herman";
+        main();
+    };
+    button[11].onclick = function() {
+        e = "Emilia";
+        main();
+    };
+
+    button[12].onclick = function() {
+        e = "Cornelius";
+        main();
+    };
+    button[13].onclick = function() {
+        e = "Torkel";
+        main();
+    };
+    button[14].onclick = function() {
+        e = "Martha";
+        main();
+    };
+    button[15].onclick = function() {
+        e = "Mari";
+        main();
+    };
+    button[16].onclick = function() {
+        e = "Matias";
+        main();
+    };
+    button[17].onclick = function() {
+        e = "Tuva";
+        main();
+    };
+
+
+
+    function main() {
+        console.log(e);
+
+        poeng = 35 - 5 * (h + 1);
+
+        console.log(poeng);
+
+        if(n === 3){
+            li[y].innerHTML = e + ": " + (h + 1) + ". plass";
+            y++;
+        }
+        else {
+            li[y].innerHTML = e + ": " + poeng;
+            y++;
+        }
+
+        if (n === 0) {
+        navn1Array.push(e);
+        poeng1Array.push(poeng);
+    }
+        else if(n === 1){
+            navn2Array.push(e);
+            poeng2Array.push(poeng);
+        }
+        else if(n === 2){
+            navn3Array.push(e);
+            poeng3Array.push(poeng);
+        }
+
+        h++;
+
+        if(h === 6){
+            h = 0;
+            n++;
+        }
+    };
+
+
+    btn.onclick = function(){
+        btn.style.display = "none";
+        liste4.style.display = "block";
+        finale.style.display = "block";
+
+        finalistene.innerHTML = "FINALISTENE:";
+        button[18].innerHTML = navn1Array[0];
+        button[19].innerHTML = navn1Array[1];
+
+        button[20].innerHTML = navn2Array[0];
+        button[21].innerHTML = navn2Array[1];
+
+        button[22].innerHTML = navn3Array[0];
+        button[23].innerHTML = navn3Array[1];
+    }
+
+    button[18].onclick = function() {
+        e = navn1Array[0];
+        main();
+    };
+    button[19].onclick = function() {
+        e = navn1Array[1];
+        main();
+    };
+    button[20].onclick = function() {
+        e = navn2Array[0];
+        main();
+    };
+    button[21].onclick = function() {
+        e = navn2Array[1];
+        main();
+    };
+    button[22].onclick = function() {
+        e = navn3Array[0];
+        main();
+    };
+    button[23].onclick = function() {
+        e = navn3Array[1];
+        main();
+    };
+
+/*
+    for (let poeng of poeng1Array){
+        if (largest < poeng){
+            largest = poeng;
+            i = 0;
+        }
+        else if(largest > poeng1Array){
+            i++;
+        }
+        console.log(largest);
+        console.log(i);
+    }
+    */
+
+
+
+
+
+</script>
+
+</body>
+</html>

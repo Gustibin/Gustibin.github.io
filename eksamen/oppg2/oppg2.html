@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oppg2</title>
+</head>
+<body>
+
+<input id="inpTall1" type="number" placeholder="Bredde piksler">
+<input id="inpTall2" type="number" placeholder="Høyde piksler">
+<br>
+<button id="btnRegnUt">Regn ut</button>
+<br>
+<span></span>
+<br>
+<span></span>
+
+
+<script>
+
+    var inpTall1 = document.getElementById("inpTall1");
+    var inpTall2 = document.getElementById("inpTall2");
+    let spnResultat = document.querySelectorAll("span");
+    var btnRegnUt = document.getElementById("btnRegnUt");
+
+    //  console.log(inpTall.value);
+    //  spnResultat.innerHTML(inpTall.value);
+
+
+
+    btnRegnUt.onclick = function(){
+        spnResultat[0].innerHTML = "Piksler: " + Number(inpTall2.value) * Number(inpTall1.value);
+        spnResultat[1].innerHTML = "MegaPiksler: " + (Number(inpTall2.value) * Number(inpTall1.value))/1000000;
+
+    };
+
+    </script>
+
+</body>
+</html>

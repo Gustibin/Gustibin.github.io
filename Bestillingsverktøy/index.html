@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bestillingsverktøy</title>
+    <style>
+
+      button{
+          max-width: 200px;
+          position: absolute;
+      }
+        img{
+            max-width: 200px;
+        }
+
+        #matKasse1{
+            left: 30%;
+            top: 35%;
+        }
+      #matKasse2{
+          left: 50%;
+          top: 35%;
+      }
+
+        #blankBilde{
+            position: absolute;
+            left: 40%;
+            top: 10%;
+        }
+
+        #antallInp{
+            position: absolute;
+            left: 43%;
+            top: 70%;
+        }
+
+        h1{
+            position:absolute;
+            left: 43%;
+        }
+
+        #prisOutput{
+            position: absolute;
+            left: 47%;
+            top: 75%;
+            font-size: larger;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>MatKasser!</h1>
+
+<img id="blankBilde" src="" alt="">
+
+<button id="matKasse1">
+    <img src="bilde/2.png" alt="">
+</button>
+<button id="matKasse2">
+    <img src="bilde/3.png" alt="">
+</button>
+
+<input id="antallInp" type="number" placeholder="Skriv antall personer">
+
+<p id="prisOutput"></p>
+
+
+<script>
+
+    let matKasse1 = document.querySelector("#matKasse1");
+    let matKasse2 = document.querySelector("#matKasse2");
+    let blankBilde = document.querySelector("#blankBilde");
+    let antallInp = document.querySelector("#antallInp");
+    let prisOutput = document.querySelector("#prisOutput");
+
+
+    matKasse1.onclick = Klikk1;
+    matKasse2.onclick = Klikk2;
+    antallInp.oninput = kalkulasjon;
+
+    let i = 0;
+
+        function kalkulasjon(){
+        if(antallInp.value < 0 || antallInp.value > 20){
+            prisOutput.innerHTML = "Nummer funker ikke";
+        }
+      else if(antallInp.value < 5){
+         prisOutput.innerHTML = i * antallInp.value * 80;
+         console.log(i * antallInp.value * 80);
+      }
+        else{
+            prisOutput.innerHTML = i * antallInp.value * 70;
+            console.log(i * antallInp.value * 70);
+        }
+
+    }
+
+
+    function Klikk1(){
+        blankBilde.src = "bilde/2box.png";
+        i = 2;
+        kalkulasjon();
+    }
+
+    function Klikk2(){
+        blankBilde.src = "bilde/3box.png";
+        i = 3;
+        kalkulasjon();
+    }
+
+</script>
+
+</body>
+</html>

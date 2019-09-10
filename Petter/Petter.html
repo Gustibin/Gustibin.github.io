@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>bottegreie</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<h1>Gjett vekten på skinka!</h1>
+<h2 id="h2"></h2>
+    <img src="vedlegg/sinkboette.jpg" id="botte">
+    <img src="vedlegg/skinke.jpg" id="skinke">
+
+<input type="number" id="vektinput">
+
+
+<script>
+
+    let vektInp = document.querySelector("#vektinput");
+
+
+    vektinput.oninput = function (){
+        if(vektInp.value > 1 && vektInp.value < 5){
+            h2.innerHTML = "feil"
+        }
+        else if (vektInp.value > 5 && vektInp.value < 8){
+
+            h2.innerHTML = "feil"
+        }
+        else if (vektInp.value > 9 && vektInp.value < 11){
+            h2.innerHTML = "feil"
+        }
+        else if (vektInp.value > 11 && vektInp.value < 14){
+            h2.innerHTML = "feil"
+        }
+        else if (vektInp.value == 8){
+            h2.innerHTML = "Riktig!"
+        }
+        else{
+            h2.innerHTML = "Helt feil.."
+        }
+    }
+
+
+</script>
+
+
+
+
+</body>
+</html>

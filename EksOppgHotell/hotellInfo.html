@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>hotellinfo</title>
+    <style>
+        #soyler{
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-gap: 3px;
+            align-items: end;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<select name="velgHotell" id="velgHotell">
+    <option value="Hotell">Hotell</option>
+    <option value="Spidsbergseter">Spiderbergseter</option>
+    <option value="Rondablikk">Rondablikk</option>
+    <option value="RondaneSPA">Rondane SPA</option>
+    <option value="Brekkeseter">Brekkeseter</option>
+    <option value="Hjerkinn">Hjerkinn</option>
+</select>
+
+<div id="hotellInfo"></div>
+
+<div id="soyler"></div>
+
+<script src="hotellInfo.js"></script>
+
+</body>
+</html>

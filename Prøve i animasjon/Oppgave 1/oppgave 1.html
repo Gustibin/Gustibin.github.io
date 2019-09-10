@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oppgave1</title>
+
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #5881d3;
+            margin-right: 20px;
+            float: left;
+            position: absolute;
+        }
+
+
+        #firkant1{
+            left: 200px;
+        }
+
+        #firkant1:hover{
+            transform: rotate(90deg);
+            transform-origin: 100% 100%;
+            transition: 0.5s;
+        }
+
+        #firkant2{
+            left: 200px;
+            top: 350px;
+        }
+
+        #firkant2:hover{
+            transform: rotate(60deg);
+            transform-origin: 50% 50%;
+            transition: 1s;
+        }
+
+        #firkant3{
+            right:200px;
+        }
+
+        #firkant3:hover{
+            width: 400px;
+            height: 400px;
+            transition: 1s;
+        }
+
+        #firkant4{
+            right: 200px;
+            top: 350px;
+        }
+
+        #firkant4:hover{
+            right: 0px;
+            transition: 1s;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="firkant1">1</div>
+<div id="firkant2">2</div>
+<div id="firkant3">3</div>
+<div id="firkant4">4</div>
+
+
+
+</body>
+</html>

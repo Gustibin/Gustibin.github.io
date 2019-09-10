@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>spaceX</title>
+
+    <style>
+        body{
+            background-image: url("vedlegg 2/earth.png"); /* Setter bakggrunnsbilde til earth.png*/
+            background-size: 100% auto; /* bakgrunnsbilde strekkes over hele skjermen */
+        }
+
+
+
+        /*
+
+        @keyframes rakettAnimasjon{
+            0%{
+                left: 650px;
+                bottom: 100px;
+            }
+            50%{
+                left: 650px;
+                bottom: 400px;
+            }
+            70%{
+                left: 600px;
+                bottom: 600px;
+                transform: rotate(-10deg);
+            }
+            100%{
+                left: 580px;
+                bottom: 1000px;
+                transform: rotate(-20deg);
+            }
+        }
+
+*/
+
+        #rakett{
+            position: absolute;
+
+        }
+
+
+        #bakgrunn{
+            width: 1250px;
+            height: 700px;
+            position: absolute;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+<button id="knapp1">klikk her for å dra til månen</button>
+<button id="knapp2">klikk her for å dra tilbake til jorda</button>
+
+<img src="vedlegg%202/moon.png" id="bakgrunn">
+<img id="rakett" src="vedlegg%202/spaceX.png">
+
+
+
+
+<script>
+
+
+
+
+
+    let knapp1 = document.querySelector("#knapp1");
+    let rakett = document.querySelector("#rakett");
+    let bakgrunn = document.querySelector("#bakgrunn");
+    let knapp2 = document.querySelector("#knapp2");
+
+
+    let h = 3;
+
+    bakgrunn.style.display = "none";
+
+
+    let animasjonsStil = [
+        {
+            left: "650px",
+            bottom: "100px",
+            transform:"rotate(0deg)"
+        },
+        {
+            left:"650px",
+            bottom:"300px",
+            transform:"rotate(0deg)"
+        },
+        {
+            left: "600px",
+            bottom: "2000px",
+            transform: "rotate(-20deg)"
+        },
+
+        {
+            left: "600px",
+            bottom: "2000px",
+            transform: "rotate(-20deg)"
+        },
+        {
+            left:"650px",
+            bottom:"300px",
+            transform:"rotate(0deg)"
+        },
+        {
+            left: "650px",
+            bottom: "100px",
+            transform:"rotate(0deg)"
+        }
+
+    ];
+
+    let animasjonsEgenskaper = {
+        duration: 5000,
+        easing: "ease-in-out",
+        direction: "alternate",
+        fill: "forwards"
+    };
+
+
+
+
+
+
+    let aniRakett1 = rakett.animate(animasjonsStil,animasjonsEgenskaper);
+
+    aniRakett1.pause();
+
+
+
+
+    /*
+    aniBill.play();
+    aniBill.reverse();
+    */
+
+
+
+    knapp1.onclick = function() {
+        h = 3;
+        aniRakett1.play();
+        for (let b = 0; b < 4; b++) {
+            setTimeout(function () {
+                h = h - 1;
+                if (h === -1) {
+                    console.log("funker");
+                    bakgrunn.style.display = "block";
+                }
+                if(h=== - 3){
+                    aniRakett1.pause();
+                }
+            }, 1000 * b);
+        }
+    };
+
+
+   knapp2.onclick = function() {
+       h = 3;
+        aniRakett1.play();
+        for (let b = 0; b < 4; b++) {
+            setTimeout(function () {
+                h = h - 1;
+                if (h === -1) {
+                    console.log("funker");
+                    bakgrunn.style.display = "none";
+
+                }
+            }, 1000 * b);
+        }
+    }
+
+
+
+
+
+
+
+    //document.body.style.backgroundImage = "vedlegg2/moon.png";
+
+</script>
+
+</body>
+</html>

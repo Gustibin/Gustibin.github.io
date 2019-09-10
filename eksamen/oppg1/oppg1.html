@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oppg1</title>
+    <style>
+
+        #fjellBilde{
+            max-width: 500px;
+        }
+
+        h1{
+            position: absolute;
+            left: 600px;
+        }
+        p{
+            position: absolute;
+            left: 600px;
+            top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Informasjon</h1>
+<p id="blank"></p>
+<img src="fjell.jpg" id="fjellBilde">
+
+<script>
+
+    let blank = document.querySelector("#blank");
+
+    document.onmousedown = function() {
+        let x = event.clientX;
+        let y = event.clientY;
+
+        if(x < 500){
+            if(y < 235){
+                blank.innerHTML = "Fjell1: jpg. anbefales grunnet mindre filstørrelse. Til bruk for nettside. Ikke lagre bilde for høy kvalitet for å minimere innlastningstid. ";
+        }
+            else if(y > 471){
+                blank.innerHTML = "Fjell3: png. anbefales grunnet ønske om gjennomsiktig bagrunn. Til bruk for store reklameskilt. Derfor anbefales det å lagre i høy kvalitet i og med at innlastning ikke er et problem.";
+            }
+            else{
+                blank.innerHTML = "Fjell2: png. anbefales grunnet ønske om gjennomsiktlig bakgrunn. Til bruk for nettside. Ikke lagre bilde for høy kvalitet for å minimere innlastningstid.";
+            }
+        }
+
+        console.log(y);
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>petter2</title>
+</head>
+<body>
+
+<input id=inp type="text">
+<button id="knapp">klikk</button>
+<button id="finaleKnapp">klikk for finale</button>
+
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+<p id="p4"></p>
+<p id="p5"></p>
+<p id="p6"></p>
+
+<p id="finalist1"></p>
+<p id="finalist2"></p>
+
+
+<script>
+
+    let inp = document.getElementById("inp");
+    let knapp = document.getElementById("knapp");
+    let finaleKnapp = document.getElementById("finaleKnapp");
+    let p1 = document.getElementById("p1");
+    let p2 = document.getElementById("p2");
+    let p3 = document.getElementById("p3");
+    let p4 = document.getElementById("p4");
+    let p5 = document.getElementById("p5");
+    let p6 = document.getElementById("p6");
+    let finalist1 = document.getElementById("finalist1");
+    let finalist2 = document.getElementById("finalist2");
+
+    let rekkefølge = 0;
+
+    knapp.onclick = function(){
+        if(rekkefølge === 0){
+            p1.innerHTML = inp.value + 30;
+        }
+        else if(rekkefølge === 1){
+            p2.innerHTML = inp.value + 25;
+        }
+        else if(rekkefølge === 2){
+            p3.innerHTML = inp.value + 20;
+        }
+        else if(rekkefølge === 3){
+            p4.innerHTML = inp.value + 15;
+        }
+        else if(rekkefølge === 4){
+            p5.innerHTML = inp.value + 10;
+        }
+        else if(rekkefølge === 5){
+            p6.innerHTML = inp.value + 5;
+        }
+        rekkefølge++;
+    }
+
+    finaleKnapp.onclick = function(){
+        finalist1.innerHTML = p1.innerHTML;
+        finalist2.innerHTML = p2.innerHTML;
+    }
+
+
+
+</script>
+
+</body>
+</html>

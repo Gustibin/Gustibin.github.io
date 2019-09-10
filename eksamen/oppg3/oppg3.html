@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>oppg3</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+<h1>Hyttetur</h1>
+
+<select name="velgHytte" id="velgHytte">
+    <option value=Hytte>Hytte</option>
+    <option value=Gjendesheim>Gjendesheim</option>
+    <option value=Glitterheim>Glitterheim</option>
+    <option value=Memurubu>Memurubu</option>
+    <option value=Gjendebu>Gjendebu</option>
+    <option value=Leirvassbu>Leirvassbu</option>
+    <option value=Spiterstulen>Spiterstulen</option>
+    <option value=Olavsbu>Olavsbu</option>
+</select>
+
+
+<select name="stier1" id="velgSti1">
+    <option value="Stier">Stier</option>
+    <option value="sti1"></option>
+    <option value="sti2"></option>
+    <option value="sti3"></option>
+    <option value="sti4"></option>
+</select>
+
+<select name="stier2" id="velgSti2">
+    <option value="Stier">Stier</option>
+    <option value="sti1"></option>
+    <option value="sti2"></option>
+    <option value="sti3"></option>
+    <option value="sti4"></option>
+</select>
+
+
+<button>Klikk når du er ferdig</button>
+<p id="blank"></p>
+
+<script>
+
+const velgHytte = document.querySelector("#velgHytte");
+const velgSti1 = document.querySelector("#velgSti1");
+const velgSti2 = document.querySelector("#velgSti2");
+const blank = document.querySelector("#blank");
+const btn = document.querySelector("button");
+
+let Gjendesheim = ["Glitterheim,22km", "Memurubu, 14km"];
+let Glitterheim = ["Gjendesheim, 22km", "Memurubu, 18km"];
+let Memurubu = ["Gjendesheim, 14km", "Glitterhiem, 18km", "Gjendebu, 10km"];
+let Gjendebu = ["Memurubu, 10km", "Leirvassbu, 19km", "Spiterstulen, 24km", "Olavsbu, 16km"];
+let Leirvassbu = ["Gjendebu, 19km", "Spiterstulen, 15km", "Olavsbu, 11km"];
+let Spiterstulen = ["Glitterheim, 17km", "Gjendebu, 24km", "Leirvassbu, 15km"];
+let Olavsbu = ["Gjendebu, 16km", "Leirvassbu, 11km"];
+
+let hytter = [Gjendesheim, Glitterheim, Memurubu, Gjendebu, Leirvassbu, Spiterstulen, Olavsbu];
+let hytter1 = ["Gjendesheim", "Glitterheim", "Memurubu", "Gjendebu", "Leirvassbu", "Spiterstulen", "Olavsbu"];
+
+let i = 0;
+let y = 0;
+let blankA = [];
+
+velgHytte.onchange = function(){
+    for(let hytte of hytter1){
+        if(velgHytte.value === hytte){
+            if(hytte === "Gjendesheim"){
+                i = 0;
+            }
+            else if(hytte === "Glitterheim"){
+                i = 1;
+            }
+            else if(hytte === "Memurubu"){
+                i = 2;
+            }
+            else if(hytte === "Gjendebu"){
+                i = 3;
+            }
+            else if(hytte === "Leirvassbu"){
+                i = 4;
+            }
+            else if(hytte === "Spiterstulen"){
+                i = 5;
+            }
+            else if(hytte === "Olavsbu"){
+                i = 6;
+            }
+        }
+
+
+        velgSti1[1].innerHTML = hytter[i][0];
+        velgSti1[2].innerHTML = hytter[i][1];
+        velgSti1[3].innerHTML = hytter[i][2];
+        velgSti1[4].innerHTML = hytter[i][3];
+        velgSti1[1].value = hytter[i][0];
+        velgSti1[2].value = hytter[i][1];
+        velgSti1[3].value = hytter[i][2];
+        velgSti1[4].value = hytter[i][3];
+    }
+};
+
+velgSti1.onchange = function(){
+    for(let hytte of hytter[i]) {
+        if (velgSti1.value === hytte) {
+            if (hytte === "Glitterheim,22km") {
+                y = 1;
+                blankA[0] = 22;
+            } else if (hytte === "Memurubu, 14km") {
+                y = 2;
+                blankA[0] = 14;
+            } else if (hytte === "Memurubu, 18km") {
+                y = 2;
+                blankA[0] = 18;
+            } else if (hytte === "Gjendesheim, 14km") {
+                y = 0;
+                blankA[0] = 14;
+            } else if (hytte === "Glitterhiem, 18km") {
+                y = 1;
+                blankA[0] = 18;
+            } else if (hytte === "Gjendebu, 10km") {
+                y = 3;
+                blankA[0] = 10;
+            } else if (hytte === "Olavsbu, 16km") {
+                y = 6;
+                blankA[0] = 16;
+            } else if (hytte === "Gjendebu, 19km") {
+                y = 3;
+                blankA[0] = 19;
+            } else if (hytte === "Spiterstulen, 15km") {
+                y = 5;
+                blankA[0] = 15;
+            } else if (hytte === "Glitterheim, 17km") {
+                y = 1;
+                blankA[0] = 17;
+            } else if (hytte === "Gjendebu, 24km") {
+                y = 3;
+                blankA[0] = 24;
+            } else if (hytte === "Leirvassbu, 15km") {
+                y = 4;
+                blankA[0] = 15;
+            } else if (hytte === "Gjendebu, 16km") {
+                y = 3;
+                blankA[0] = 16;
+            } else if (hytte === "Leirvassbu, 11km") {
+                y = 4;
+                blankA[0] = 11;
+            } else if (hytte === "Olavsbu, 16km") {
+                y = 6;
+                blankA[0] = 16;
+            }
+        }
+    }
+
+    console.log("y: " + y);
+
+    velgSti2[1].innerHTML = hytter[y][0];
+    velgSti2[2].innerHTML = hytter[y][1];
+    velgSti2[3].innerHTML = hytter[y][2];
+    velgSti2[4].innerHTML = hytter[y][3];
+    velgSti2[1].value = hytter[y][0];
+    velgSti2[2].value = hytter[y][1];
+    velgSti2[3].value = hytter[y][2];
+    velgSti2[4].value = hytter[y][3];
+    };
+
+velgSti2.onchange = function() {
+    for (let hytte of hytter[y]) {
+        if (velgSti2.value === hytte) {
+            if (hytte === "Glitterheim,22km") {
+                y = 1;
+                blankA[1] = 22;
+            } else if (hytte === "Memurubu, 14km") {
+                blankA[1] = 14;
+            } else if (hytte === "Memurubu, 18km") {
+                blankA[1] = 18;
+            } else if (hytte === "Gjendesheim, 14km") {
+                blankA[1] = 14;
+            } else if (hytte === "Glitterhiem, 18km") {
+                blankA[1] = 18;
+            } else if (hytte === "Gjendebu, 10km") {
+                blankA[1] = 10;
+            } else if (hytte === "Olavsbu, 16km") {
+                blankA[1] = 16;
+            } else if (hytte === "Gjendebu, 19km") {
+                blankA[1] = 19;
+            } else if (hytte === "Spiterstulen, 15km") {
+                blankA[1] = 15;
+            } else if (hytte === "Glitterheim, 17km") {
+                blankA[1] = 17;
+            } else if (hytte === "Gjendebu, 24km") {
+                blankA[1] = 24;
+            } else if (hytte === "Leirvassbu, 15km") {
+                blankA[1] = 15;
+            } else if (hytte === "Gjendebu, 16km") {
+                blankA[1] = 16;
+            } else if (hytte === "Leirvassbu, 11km") {
+                blankA[1] = 11;
+            } else if (hytte === "Olavsbu, 16km") {
+                blankA[1] = 16;
+            }
+        }
+
+
+    }
+}
+
+
+
+    btn.onclick = function() {
+        console.log(blankA);
+        console.log(velgHytte[i + 1].value);
+        blank.innerHTML = "Du startet på: " + velgHytte[i + 1].value + ". Derretter gikk du til " + velgSti1.value
+            + ". Også til slutt gikk du til " + velgSti2.value + ". På denne turen gikk du til sammen: " +
+            (blankA[0] + blankA[1]) + "km."
+    };
+
+</script>
+
+</body>
+</html>

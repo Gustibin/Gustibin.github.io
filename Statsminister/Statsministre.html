@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>statsministre</title>
+</head>
+<body>
+
+
+<script>
+
+    class Statsminister{
+        constructor(fornavn, etternavn, parti, interesser){
+            this.fornavn = fornavn;
+            this.etternavn = etternavn;
+            this.parti = parti;
+            this.interesser = interesser;
+        }
+        fulltnavn(){
+            document.write(this.fornavn + " " + this.etternavn)
+        }
+    }
+
+    let Erna = new Statsminister("Erna", "Solberg", "Høyre", "Snakke om fødselsrate");
+    console.log(Erna.fornavn);
+
+    Erna.fulltnavn();
+
+</script>
+
+</body>
+</html>

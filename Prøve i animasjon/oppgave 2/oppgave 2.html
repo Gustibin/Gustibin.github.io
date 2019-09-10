@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>valutakalkulator</title>
+</head>
+<body>
+
+
+<input type="number">
+<br>
+<button>Svenske</button>
+<button>Britiske</button>
+<button>Amerikanske</button>
+<p id="skrift"></p>
+
+
+<script>
+
+    let input = document.querySelector("input");
+    let button = document.querySelectorAll("button");
+    let skrift = document.querySelector("#skrift");
+
+
+    button[0].onclick = function(){
+        skrift.innerHTML = input.value * 1.07;
+    }
+
+    button[1].onclick = function(){
+        skrift.innerHTML = input.value * 0.089;
+    }
+
+    button[2].onclick = function(){
+        skrift.innerHTML = input.value * 0.11;
+    }
+
+
+
+
+</script>
+
+
+</body>
+</html>
