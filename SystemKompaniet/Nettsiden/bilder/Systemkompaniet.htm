@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
-<title>Systemkompaniet</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<!-- saved from url=(0092)file:///Users/Gustav/Desktop/IT_2017/Gustibin.github.io/SystemKompaniet/Nettsiden/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Systemkompaniet</title>
 
-<head>
-    <link rel="shortcut icon" type="image/x-icon" href="bilder/systemMiniLogo.png" />
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="./Systemkompaniet_files/w3.css">
+<link rel="stylesheet" href="./Systemkompaniet_files/css">
+
+
+    <link rel="shortcut icon" type="image/x-icon" href="file:///Users/Gustav/Desktop/IT_2017/Gustibin.github.io/SystemKompaniet/Nettsiden/bilder/systemMiniLogo.png">
 <style>
     body,
     h1,
@@ -59,7 +58,6 @@
 
     #mySidebar {
         background-color: #B2BE35;
-        top: 200px;
     }
 
     #banner {
@@ -101,30 +99,29 @@
         font-size: 32px;
     }
 
-</style>
+</style></head>
+
 
 <body>
 
     <!-- Banner -->
 
-    <div id="banner2"></div>
-    <div id="banner"></div>
-    <img src="bilder/bannerDel.svg" id="bannerDel">
+    <div id="banner2" style="display: block;"></div>
+    <div id="banner" style="display: block;"></div>
+    <img src="./Systemkompaniet_files/bannerDel.svg" id="bannerDel" style="display: block;">
 
 
     <!-- Sidebar/meny -->
-    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"
-        id="mySidebar"><br>
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
-            style="width:100%;font-size:22px">Close Menu</a>
+    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index: 3; width: 300px; font-weight: bold; top: 0px;" id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
         <div class="w3-container">
             <h3 class="w3-padding-28"><b>System<br>Kompaniet</b></h3>
         </div>
         <div class="w3-bar-block">
-            <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hjem</a>
-            <a href="#tjenester" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Tjenester</a>
-            <a href="#hvem" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hvem er vi?</a>
-            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Kontakt oss</a>
+            <a href="file:///Users/Gustav/Desktop/IT_2017/Gustibin.github.io/SystemKompaniet/Nettsiden/index.html#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hjem</a>
+            <a href="file:///Users/Gustav/Desktop/IT_2017/Gustibin.github.io/SystemKompaniet/Nettsiden/index.html#tjenester" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Tjenester</a>
+            <a href="file:///Users/Gustav/Desktop/IT_2017/Gustibin.github.io/SystemKompaniet/Nettsiden/index.html#hvem" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hvem er vi?</a>
+            <a href="file:///Users/Gustav/Desktop/IT_2017/Gustibin.github.io/SystemKompaniet/Nettsiden/index.html#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Kontakt oss</a>
         </div>
     </nav>
 
@@ -137,15 +134,14 @@
     </header>
 
     <!-- Overlay effekt når man åpner sidebar på liten skjerm -->
-    <div class="w3-overlay w3-hide-large"  onclick="w3_close()" style="cursor:pointer" title="close side menu"
-        id="myOverlay"></div>
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
 
     <!-- Side innhold -->
     <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
         <!-- Overdel -->
-        <div class="w3-container" style="margin-top:90px" id="showcase">
+        <div class="w3-container" style="margin-top:80px" id="showcase">
             <h1 id="hovedOverskriften"><b id="overskriftB">Systemkompaniet</b></h1>
 
         </div>
@@ -153,12 +149,12 @@
         <!-- Bildene -->
         <div class="w3-row-padding">
             <div class="w3-whole">
-                <img src="bilder/bilde1.jpg" style="width:100%" onclick="onClick(this)" alt="Informasjon om hvem som er hvem">
+                <img src="./Systemkompaniet_files/bilde1.jpg" style="width:100%" onclick="onClick(this)" alt="Informasjon om hvem som er hvem">
             </div>
         </div>
 
         <!-- Full størrelse bilde når klikket-->
-        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display=&#39;none&#39;">
             <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
             <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
                 <img id="img01" class="w3-image">
@@ -192,9 +188,9 @@
             <p>Systemkompaniet AS ble grunnlagt i 1999 under navnet Vista99 AS. I 2012 byttet vi til vårt nåværende
                 navn. Vårt mål er å bistå kundene våre i å utvikle effektive og dynamiske løsninger basert på z/OS og
                 Windows-plattformen. Vi har også bred erfaring i å utvikle integrasjonsløsninger mellom z/OS og andre
-                plattformer. Kundene våre befinner seg innen bank/finans.  Våre konsulenter har kompetanse og erfaring
-                innen:<br /> 
-                <ul>
+                plattformer. Kundene våre befinner seg innen bank/finans. &nbsp;Våre konsulenter har kompetanse og erfaring
+                innen:<br>&nbsp;
+                </p><ul>
                     <li>Prosjektledelse</li>
                     <li>Forretningsanalyse</li>
                     <li>Datamodellering</li>
@@ -205,13 +201,13 @@
                     <li>Testing og testledelse</li>
                     <li>ITIL (alle er sertifiserte)</li>
                 </ul>
-                <br />Alle våre konsulenter har erfaring fra organisasjoner som har vektlagt gode datamodeller og
-                verdien av data som ressurs. <br /> Systemkompaniet har 5 konsulenter, alle har lang og bred erfaring
+                <br>Alle våre konsulenter har erfaring fra organisasjoner som har vektlagt gode datamodeller og
+                verdien av data som ressurs.&nbsp;<br> Systemkompaniet har 5 konsulenter, alle har lang og bred erfaring
                 innen alle områder av systemutvikling. I tillegg har alle også god forretningskunnskap innen
                 bank/finans. Dette gjør at vi nettopp innen dette området i særskilt grad kan bidra til å omforme et
-                forretningskrav til en fungerende IT-løsning.<br /><br />Vi kan delta i både pågående prosjekter og
+                forretningskrav til en fungerende IT-løsning.<br><br>Vi kan delta i både pågående prosjekter og
                 nyutvikling. Vi kan også gå inn i systemer som allerede er i produksjon, og påta oss forvaltning og
-                optimalisering av porteføljen.<br /><br />
+                optimalisering av porteføljen.<br><br>
                 <!-- </p>
             <p><b>Dette er oss</b>:</p> -->
         </div>
@@ -310,7 +306,7 @@
                 banner.style.display = "none";
                 banner2.style.display = "none";
                 bannerDel.style.display = "none";
-                mySidebar.style.top = "68px";
+                mySidebar.style.top = "200px";
                
 
 
@@ -320,7 +316,8 @@
                 banner.style.display = "block";
                 banner2.style.display = "block";
                 bannerDel.style.display = "block"; 
-                mySidebar.style.top = "200px";
+                mySidebar.style.top = "0px";
+
 
               
 
@@ -334,7 +331,7 @@
                 banner.style.display = "none";
                 banner2.style.display = "none";
                 bannerDel.style.display = "none";
-                mySidebar.style.top = "68px";
+                mySidebar.style.top = "200px";
 
               
 
@@ -348,6 +345,6 @@
 
     </script>
 
-</body>
 
-</html>
+
+</body></html>
