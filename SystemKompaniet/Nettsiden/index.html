@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Systemkompaniet</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<head>
+    <link rel="shortcut icon" type="image/x-icon" href="bilder/systemMiniLogo.png" />
+</head>
+<style>
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Poppins", sans-serif;
+    }
+
+    p {
+        font-family: "Poppins", sans-serif;
+        color: black;
+    }
+
+    #caption{
+        font-family: "Poppins", sans-serif;
+        color: white;
+    }
+
+    h1 {
+        color: #B2BE35;
+    }
+
+    hr {
+        border: 5px solid #B2BE35;
+    }
+
+    h3 {
+        color: white;
+    }
+
+    body {
+        font-size: 16px;
+        background-color: #ffffff;
+    }
+
+    .w3-whole img {
+        margin-bottom: -6px;
+        margin-top: 16px;
+        opacity: 0.9;
+        cursor: pointer
+    }
+
+    .w3-whole img:hover {
+        opacity: 1
+    }
+
+    #mySidebar {
+        background-color: #B2BE35;
+        top: 200px;
+    }
+
+    #banner {
+        background-color: #006288;
+        position: absolute;
+        height: 200px;
+        width: 1000px;
+        top: 0px;
+        right: 0px;
+    }
+
+    #banner2 {
+        background-color: #B2BE35;
+        position: absolute;
+        height: 2300px;
+        width: 300px;
+        top: 0px;
+        left: 0px;
+
+    }
+
+    #bannerDel {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+    }
+
+    #head1{
+        background-color: #006288;
+    }
+    #litenSystemkompaniet{
+        color: white;
+    }
+    #hovedOverskriften{
+        font-size: 52px;
+    }
+
+</style>
+
+<body>
+
+    <!-- Banner -->
+
+    <div id="banner2"></div>
+    <div id="banner"></div>
+    <img src="bilder/bannerDel.png" id="bannerDel">
+
+
+    <!-- Sidebar/meny -->
+    <nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;"
+        id="mySidebar"><br>
+        <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
+            style="width:100%;font-size:22px">Close Menu</a>
+        <div class="w3-container">
+            <h3 class="w3-padding-64"><b>System<br>Kompaniet</b></h3>
+        </div>
+        <div class="w3-bar-block">
+            <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hjem</a>
+            <a href="#tjenester" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Tjenester</a>
+            <a href="#hvem" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hvem er vi?</a>
+            <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Kontakt oss</a>
+        </div>
+    </nav>
+
+
+
+    <!-- Top meny på små skjærmer -->
+    <header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding" id="head1">
+        <a href="javascript:void(0)" class="w3-button w3-margin-right" onclick="w3_open()">☰</a>
+        <span id="litenSystemkompaniet">Systemkompaniet</span>
+    </header>
+
+    <!-- Overlay effekt når man åpner sidebar på liten skjerm -->
+    <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu"
+        id="myOverlay"></div>
+
+
+    <!-- Side innhold -->
+    <div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+        <!-- Overdel -->
+        <div class="w3-container" style="margin-top:100px" id="showcase">
+            <h1 id="hovedOverskriften"><b>Systemkompaniet</b></h1>
+
+        </div>
+
+        <!-- Bildene -->
+        <div class="w3-row-padding">
+            <div class="w3-whole">
+                <img src="bilder/bilde1.jpg" style="width:100%" onclick="onClick(this)" alt="Informasjon om hvem som er hvem">
+            </div>
+        </div>
+
+        <!-- Full størrelse bilde når klikket-->
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+            <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+            <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                <img id="img01" class="w3-image">
+                <p id="caption"></p>
+            </div>
+        </div>
+
+        <!-- Tjenester -->
+        <div class="w3-container" id="tjenester" style="margin-top:75px">
+            <h1 class="w3-xxxlarge"><b>Tjenester</b></h1>
+            <hr style="width:50px;" class="w3-round">
+            <p>Vi er et selskap som hjelper deg med noe</p>
+            <p>It prepare is ye nothing blushes up brought. Or as gravity pasture limited evening on. Wicket around
+                beauty say she. Frankness resembled say not new smallness you discovery. Noisier ferrars yet shyness
+                weather ten colonel. Too him himself engaged husband pursuit musical. Man age but him determine
+                consisted therefore. Dinner to beyond regret wished an branch he. Remain bed but expect suffer little
+                repair.
+
+                Detract yet delight written farther his general. If in so bred at dare rose lose good. Feel and make two
+                real miss use easy. Celebrated delightful an especially increasing instrument am. Indulgence contrasted
+                sufficient to unpleasant in in insensible favourable. Latter remark hunted enough vulgar say man.
+                Sitting hearted on it without me.
+            </p>
+        </div>
+
+        <!-- Hvem er vi -->
+        <div class="w3-container" id="hvem" style="margin-top:75px">
+            <h1 class="w3-xxxlarge"><b>Hvem er vi?</b></h1>
+            <hr style="width:50px;" class="w3-round">
+            <p>Systemkompaniet AS</p>
+            <p>Systemkompaniet AS ble grunnlagt i 1999 under navnet Vista99 AS. I 2012 byttet vi til vårt nåværende
+                navn. Vårt mål er å bistå kundene våre i å utvikle effektive og dynamiske løsninger basert på z/OS og
+                Windows-plattformen. Vi har også bred erfaring i å utvikle integrasjonsløsninger mellom z/OS og andre
+                plattformer. Kundene våre befinner seg innen bank/finans.  Våre konsulenter har kompetanse og erfaring
+                innen:<br /> 
+                <ul>
+                    <li>Prosjektledelse</li>
+                    <li>Forretningsanalyse</li>
+                    <li>Datamodellering</li>
+                    <li>Design og implementasjon</li>
+                    <li>IT-arkitektur</li>
+                    <li>Integrasjon</li>
+                    <li>Konfigurering og optimalisering av databaser</li>
+                    <li>Testing og testledelse</li>
+                    <li>ITIL (alle er sertifiserte)</li>
+                </ul>
+                <br />Alle våre konsulenter har erfaring fra organisasjoner som har vektlagt gode datamodeller og
+                verdien av data som ressurs. <br /> Systemkompaniet har 5 konsulenter, alle har lang og bred erfaring
+                innen alle områder av systemutvikling. I tillegg har alle også god forretningskunnskap innen
+                bank/finans. Dette gjør at vi nettopp innen dette området i særskilt grad kan bidra til å omforme et
+                forretningskrav til en fungerende IT-løsning.<br /><br />Vi kan delta i både pågående prosjekter og
+                nyutvikling. Vi kan også gå inn i systemer som allerede er i produksjon, og påta oss forvaltning og
+                optimalisering av porteføljen.<br /><br />
+                <!-- </p>
+            <p><b>Dette er oss</b>:</p> -->
+        </div>
+
+
+        <!-- Oss -->
+
+        <!-- 
+        <div class="w3-row-padding w3-grayscale">
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="bilder/bilde5.jpg" alt="Henrik" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Henrik</h3>
+                        <p class="w3-opacity">CEO & Founder</p>
+                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
+                            elementum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="bilder/bilde6.jpg" alt="Per" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Per</h3>
+                        <p class="w3-opacity">Designer</p>
+                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
+                            elementum.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="w3-col m4 w3-margin-bottom">
+                <div class="w3-light-grey">
+                    <img src="bilder/bilde7.jpg" alt="Jens" style="width:100%">
+                    <div class="w3-container">
+                        <h3>Jens</h3>
+                        <p class="w3-opacity">Architect</p>
+                        <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque
+                            elementum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        -->
+
+
+        <!-- Kontakt -->
+        <div class="w3-container" id="contact" style="margin-top:75px">
+            <h1 class="w3-xxxlarge"><b>Kontakt oss</b></h1>
+            <hr style="width:50px;" class="w3-round">
+            <p>Kontakt info kan stå her nede</p>
+        </div>
+
+        <!-- Bunnside -->
+    </div>
+    <div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px">
+        <p class="w3-right">Systemkompaniet as, Konglefaret 23 B,1359 Eiksmarka. Org.no 980 937 054</p>
+    </div>
+
+    <script>
+        // Script for å åpne og lukke sidebar
+        function w3_open() {
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("myOverlay").style.display = "block";
+        }
+
+        function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("myOverlay").style.display = "none";
+        }
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+        let banner = document.getElementById("banner");
+        const banner2 = document.getElementById("banner2");
+        const bannerDel1 = document.getElementById("bannerDel1");
+
+
+        window.onresize = function (event) {
+            if (window.innerWidth < 993) {
+                console.log("it works");
+
+                
+                banner.style.display = "none";
+                banner2.style.display = "none";
+                bannerDel.style.display = "none"; 
+            }
+
+            else{
+                banner.style.display = "block";
+                banner2.style.display = "block";
+                bannerDel.style.display = "block"; 
+            }
+        };
+
+        if (window.innerWidth < 993) {
+                console.log("it works");
+
+                
+                banner.style.display = "none";
+                banner2.style.display = "none";
+                bannerDel.style.display = "none";
+                
+            }
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
