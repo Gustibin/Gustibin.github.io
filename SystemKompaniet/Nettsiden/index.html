@@ -65,7 +65,7 @@
     #banner {
         background-color: #006288;
         position: absolute;
-        height: 200px;
+        height: 150px;
         width: 1000px;
         top: 0px;
         right: 0px;
@@ -85,6 +85,9 @@
         position: absolute;
         top: 0px;
         left: 0px;
+        width: 300px;
+        padding: 0px;
+
     }
 
     #head1{
@@ -93,8 +96,9 @@
     #litenSystemkompaniet{
         color: white;
     }
+    
     #hovedOverskriften{
-        font-size: 52px;
+        font-size: 32px;
     }
 
 </style>
@@ -105,7 +109,7 @@
 
     <div id="banner2"></div>
     <div id="banner"></div>
-    <img src="bilder/bannerDel.png" id="bannerDel">
+    <img src="bilder/bannerDel.svg" id="bannerDel">
 
 
     <!-- Sidebar/meny -->
@@ -114,7 +118,7 @@
         <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft"
             style="width:100%;font-size:22px">Close Menu</a>
         <div class="w3-container">
-            <h3 class="w3-padding-64"><b>System<br>Kompaniet</b></h3>
+            <h3 class="w3-padding-28"><b>System<br>Kompaniet</b></h3>
         </div>
         <div class="w3-bar-block">
             <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hjem</a>
@@ -141,8 +145,8 @@
     <div class="w3-main" style="margin-left:340px;margin-right:40px">
 
         <!-- Overdel -->
-        <div class="w3-container" style="margin-top:100px" id="showcase">
-            <h1 id="hovedOverskriften"><b>Systemkompaniet</b></h1>
+        <div class="w3-container" style="margin-top:80px" id="showcase">
+            <h1 id="hovedOverskriften"><b id="overskriftB">Systemkompaniet</b></h1>
 
         </div>
 
@@ -289,8 +293,10 @@
         }
 
         let banner = document.getElementById("banner");
-        const banner2 = document.getElementById("banner2");
-        const bannerDel1 = document.getElementById("bannerDel1");
+        let banner2 = document.getElementById("banner2");
+        let bannerDel1 = document.getElementById("bannerDel1");
+  
+
 
 
         window.onresize = function (event) {
@@ -301,12 +307,17 @@
                 banner.style.display = "none";
                 banner2.style.display = "none";
                 bannerDel.style.display = "none"; 
+               
+
+
             }
 
             else{
                 banner.style.display = "block";
                 banner2.style.display = "block";
                 bannerDel.style.display = "block"; 
+              
+
             }
         };
 
@@ -317,6 +328,8 @@
                 banner.style.display = "none";
                 banner2.style.display = "none";
                 bannerDel.style.display = "none";
+              
+
                 
             }
 
