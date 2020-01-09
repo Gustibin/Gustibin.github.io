@@ -84,8 +84,8 @@
     #bannerDel {
         position: absolute;
         top: 0px;
-        left: -1px;
-        width: 23.5%;
+        left: 0px;
+        width: 300px;
         padding: 0px;
 
     }
@@ -97,6 +97,9 @@
         color: white;
     }
     
+    #hovedOverskriften{
+        font-size: 42px;
+    }
 
 </style>
 
@@ -292,7 +295,7 @@
         let banner = document.getElementById("banner");
         let banner2 = document.getElementById("banner2");
         let bannerDel1 = document.getElementById("bannerDel1");
-        let hovedOverskriften = document.getElementById("hovedOverskriften");
+  
 
 
 
@@ -304,7 +307,7 @@
                 banner.style.display = "none";
                 banner2.style.display = "none";
                 bannerDel.style.display = "none"; 
-                hovedOverskriften.style.fontSize = "42px";
+               
 
 
             }
@@ -313,7 +316,7 @@
                 banner.style.display = "block";
                 banner2.style.display = "block";
                 bannerDel.style.display = "block"; 
-                hovedOverskriften.style.fontSize = "54px"
+              
 
             }
         };
@@ -325,7 +328,7 @@
                 banner.style.display = "none";
                 banner2.style.display = "none";
                 bannerDel.style.display = "none";
-                hovedOverskriften.style.fontSize = "42px";
+              
 
                 
             }
